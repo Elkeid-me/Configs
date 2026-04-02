@@ -1,0 +1,56 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# for Ubuntu，use "\uf31b". for macOS, use "\ue711"
+format = """
+[\ue62a](#ACB0BE) \
+$username\
+[@](#8CAAEE)\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$python\
+[\uf105](#ACB0BE) """
+
+[directory]
+style = "#F4B8E4"
+read_only = " \U000f033e"
+
+[elixir]
+format = '[$symbol]($style) '
+style = "#9575CD"
+symbol = "\ue62d "
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "#BABBF1"
+
+[git_commit]
+tag_symbol = " \uf412 "
+
+[git_state]
+style = "#F4B8E4"
+
+[hostname]
+format = '[$ssh_symbol$hostname]($style) '
+ssh_only = false
+style = "#8CAAEE"
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+
+[python]
+format = '[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)'
+style = 'green bold'
+symbol = "\ue235 "
+version_format = '${raw}'
+
+[username]
+format = '[$user]($style)'
+show_always = true
+style_user = "#8CAAEE"
