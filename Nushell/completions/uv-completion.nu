@@ -487,6 +487,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -706,6 +707,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -838,6 +840,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -969,6 +972,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -1120,6 +1124,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -1242,6 +1247,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv lock index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv lock keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv lock resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -1387,6 +1393,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv export index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv export keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv export resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -1522,6 +1529,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv tree index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv tree keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tree resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -1698,6 +1706,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv audit index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv audit keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv audit resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -1870,6 +1879,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -2007,6 +2017,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -2141,6 +2152,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -2257,6 +2269,7 @@ module completions {
     --python-platform: string@"nu-complete uv tool upgrade python_platform" # The platform for which requirements should be installed
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index: string           # The URLs to use when resolving dependencies, in addition to the default index
     --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -2345,6 +2358,7 @@ module completions {
     --show-python             # Whether to display the Python version associated with each tool
     --outdated                # List outdated tools
     --no-outdated
+    --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --python-preference: string@"nu-complete uv tool list python_preference"
     --no-python-downloads
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
@@ -3121,6 +3135,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv pip compile index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv pip compile keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv pip compile resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -3421,6 +3436,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
     --no-reinstall
     --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
@@ -4106,6 +4122,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv build index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv build keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv build resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
@@ -4330,6 +4347,7 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --no-upgrade
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
     --index-strategy: string@"nu-complete uv workspace metadata index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv workspace metadata keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv workspace metadata resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement

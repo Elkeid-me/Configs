@@ -2,7 +2,7 @@
 
 add_newline = false
 
-# for Ubuntu，use "\uf31b". for macOS, use "\ue711"
+# for Ubuntu，use "\uf31b". for macOS, use "\uf302"
 format = """
 [\ue62a](#ACB0BE) \
 $username\
@@ -27,14 +27,21 @@ style = "#9575CD"
 symbol = "\ue62d "
 
 [git_branch]
-format = "[$symbol$branch(:$remote_branch)]($style) "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+symbol = "\ue725 "
 style = "#BABBF1"
 
 [git_commit]
+format = "[\uf417 $hash$tag]($style) "
 tag_symbol = " \uf412 "
+tag_disabled = false
 
 [git_state]
 style = "#F4B8E4"
+rebase = "\ue728 "
+merge = "\ue727 "
+revert = "\ue728 "
+cherry_pick = "\ue29b "
 
 [hostname]
 format = '[$ssh_symbol$hostname]($style) '
