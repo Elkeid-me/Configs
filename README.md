@@ -4,9 +4,9 @@
 
 - **有哪些工具？**
 
-  目前，有 Nushell、Starship、Helix。
+  目前，有 Nushell、Starship、Helix 和 PowerShell（7.x）。
 
-  对于 Nushell，配置了一些工具的自动补全。目前启用`dotnet`、`winget`、`git` `starship` 和 `uv` 的自动补全。
+  对于 Nushell 和 PowerShell，配置了一些工具的自动补全。目前启用`dotnet`、`winget`、`git` `starship` 和 `uv` 的自动补全。
 
 - **开箱即用吗？**
 

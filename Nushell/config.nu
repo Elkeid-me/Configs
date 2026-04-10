@@ -75,10 +75,6 @@ source ./completions/git-completion.nu
 source ./completions/uv-completion.nu
 source ./completions/starship-completion.nu
 
-def rm-history [] {
-    rm $nu.history-path
-}
-
 # def mix-build-release [] {
 #     with-env { MIX_ENV: prod } {
 #         mix release
@@ -97,15 +93,15 @@ def rm-history [] {
 
 # def --wrapped icx [...rest] {
 #     let base_path = which ^icx | get 0.path | path dirname --num-levels 2
-#     let include_path = $base_path | path join 'include'
-#     let lib_path = $base_path | path join 'lib'
-#     ^icx ...$rest /I $include_path /link $'/libpath:($lib_path)' OpenCL
+#     let include_path = $base_path | path join include
+#     let lib_path = $base_path | path join lib
+#     ^icx ...$rest /I $include_path /link $"/libpath:($lib_path)" OpenCL
 # }
 
 # def --wrapped icpx [...rest] {
 #     let base_path = which ^icpx | get 0.path | path dirname --num-levels 2
-#     let include_path = $base_path | path join 'include'
-#     let lib_path = $base_path | path join 'lib'
+#     let include_path = $base_path | path join include
+#     let lib_path = $base_path | path join lib
 #     ^icpx ...$rest -I $include_path -L $lib_path -l OpenCL
 # }
 
