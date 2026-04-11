@@ -2,7 +2,7 @@
 
 add_newline = false
 
-# for Ubuntu，use "\uf31b". for macOS, use "\uf302"
+# for Ubuntu, use "\uf31b". for macOS, use "\uf302"
 format = """
 [\ue62a](#ACB0BE) \
 $username\
