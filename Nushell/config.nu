@@ -19,6 +19,11 @@
 
 load-env {LANG: zh_CN.UTF-8}
 
+# Enable Gemini CLI's true color in WSL when using Windows Terminal.
+if ($env | get --optional wt_session | is-not-empty) and (uname).kernel-name == Linux {
+    load-env {colorterm: truecolor}
+}
+
 $env.config.show_banner = false
 $env.config.completions.algorithm = "fuzzy"
 $env.config.highlight_resolved_externals = true
@@ -81,15 +86,23 @@ source ./completions/starship-completion.nu
 #     }
 # }
 
-# def --wrapped gemini [...rest] {
-#     with-env {
-#         NODE_NO_WARNINGS: 1,
-#         http_proxy: "todo",
-#         https_proxy: "todo"
-#     } {
-#         ^gemini.cmd ...$rest
-#     }
-# }
+def --wrapped gemini [...rest] {
+    if ($env | get --optional http_proxy | is-not-empty) {
+        with-env {
+            NODE_NO_WARNINGS: 1,
+        } {
+            ^gemini.cmd ...$rest
+        }
+    } else {
+        with-env {
+            # http_proxy:  set your proxy here, e.g. http://127.0.0.1:7890
+            # https_proxy: set your proxy here, e.g. http://127.0.0.1:7890
+            NODE_NO_WARNINGS: 1,
+        } {
+            ^gemini.cmd ...$rest
+        }
+    }
+}
 
 # def --wrapped icx [...rest] {
 #     let base_path = which ^icx | get 0.path | path dirname --num-levels 2
