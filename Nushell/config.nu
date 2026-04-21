@@ -20,8 +20,8 @@
 load-env {LANG: zh_CN.UTF-8}
 
 # Enable Gemini CLI's true color in WSL when using Windows Terminal.
-if ($env | get --optional wt_session | is-not-empty) and (uname).kernel-name == Linux {
-    load-env {colorterm: truecolor}
+if ($env | get --optional WT_SESSION | is-not-empty) and (uname).kernel-name == Linux {
+    load-env {COLORTERM: truecolor}
 }
 
 $env.config.show_banner = false
