@@ -49,9 +49,9 @@ source ./completions/mix-completion.nu
 source ./completions/npm-completion.nu
 source ./completions/rustup-completion.nu
 source ./completions/ssh-completion.nu
+source ./completions/starship-completion.nu
 source ./completions/tar-completion.nu
 source ./completions/uv-completion.nu
-source ./completions/starship-completion.nu
 source ./completions/ya-completion.nu
 source ./completions/yazi-completion.nu
 
