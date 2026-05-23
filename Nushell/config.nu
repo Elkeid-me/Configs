@@ -52,6 +52,8 @@ source ./completions/ssh-completion.nu
 source ./completions/tar-completion.nu
 source ./completions/uv-completion.nu
 source ./completions/starship-completion.nu
+source ./completions/ya-completion.nu
+source ./completions/yazi-completion.nu
 
 # def mix-build-release [] {
 #     with-env { MIX_ENV: prod } {
