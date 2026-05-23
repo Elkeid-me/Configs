@@ -106,6 +106,26 @@ module completions {
     --help(-h)                # Print help
   ]
 
+  def "nu-complete starship statusline provider" [] {
+    [ "claude-code" ]
+  }
+
+  # Prints the statusline with a specific profile
+  export extern "starship statusline" [
+    --profile: string
+    --status(-s): string      # The status code of the previously run command as an unsigned or signed 32bit integer
+    --pipestatus: string      # Bash, Fish and Zsh support returning codes for each process in a pipeline
+    --terminal-width(-w): string # The width of the current interactive terminal
+    --path(-p): path          # The path that the prompt should render for
+    --logical-path(-P): path  # The logical path that the prompt should render for. This path should be a virtual/logical representation of the PATH argument
+    --cmd-duration(-d): string # The execution duration of the last command, in milliseconds
+    --keymap(-k): string      # The keymap of fish/zsh/cmd
+    --jobs(-j): string        # The number of currently running jobs
+    --shlvl: string           # The current value of SHLVL, for shells that mis-handle it in $()
+    --help(-h)                # Print help
+    provider: string@"nu-complete starship statusline provider" # The statusline provider to use
+  ]
+
   # Prints time in milliseconds
   export extern "starship time" [
     --help(-h)                # Print help
@@ -174,6 +194,10 @@ module completions {
 
   # Generate random session key
   export extern "starship help session" [
+  ]
+
+  # Prints the statusline with a specific profile
+  export extern "starship help statusline" [
   ]
 
   # Prints time in milliseconds

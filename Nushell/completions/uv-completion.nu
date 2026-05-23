@@ -26,7 +26,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -74,7 +74,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -129,7 +129,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth login color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -183,7 +183,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth logout color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -237,7 +237,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth token color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -285,7 +285,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth dir color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -338,7 +338,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth helper color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -385,7 +385,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv auth helper get color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -455,7 +455,7 @@ module completions {
     --dev                     # Include the development dependency group [env: UV_DEV=]
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
     --group: string           # Include dependencies from the specified dependency group
-    --no-group: string        # Disable the specified dependency group
+    --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
@@ -508,13 +508,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -537,7 +537,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv run color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -614,7 +614,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv init color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -728,13 +728,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -763,7 +763,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv add color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -861,13 +861,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -886,7 +886,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv remove color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -993,13 +993,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1017,7 +1017,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv version color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1094,7 +1094,7 @@ module completions {
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
     --only-dev                # Only include the development dependency group
     --group: string           # Include dependencies from the specified dependency group
-    --no-group: string        # Disable the specified dependency group
+    --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
@@ -1145,13 +1145,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1174,7 +1174,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv sync color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1263,13 +1263,13 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv lock link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1286,7 +1286,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv lock color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1361,7 +1361,7 @@ module completions {
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
     --only-dev                # Only include the development dependency group
     --group: string           # Include dependencies from the specified dependency group
-    --no-group: string        # Disable the specified dependency group
+    --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
@@ -1409,13 +1409,13 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv export link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1433,7 +1433,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv export color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1508,7 +1508,7 @@ module completions {
     --only-dev                # Only include the development dependency group
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
     --group: string           # Include dependencies from the specified dependency group
-    --no-group: string        # Disable the specified dependency group
+    --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
@@ -1516,10 +1516,10 @@ module completions {
     --frozen                  # Display the requirements without locking the project [env: UV_FROZEN=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --index: string           # The URLs to use when resolving dependencies, in addition to the default index
     --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -1545,7 +1545,7 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tree link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --script: path            # Show the dependency tree the specified PEP 723 Python script, rather than the current project
     --python-version: string  # The Python version to use when filtering the tree
     --python-platform: string@"nu-complete uv tree python_platform" # The platform to use when filtering the tree
@@ -1562,7 +1562,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tree color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1615,7 +1615,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv format color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1636,6 +1636,10 @@ module completions {
     --help(-h)                # Display the concise help for this command
     ...extra_args: string     # Additional arguments to pass to Ruff
   ]
+
+  def "nu-complete uv audit output_format" [] {
+    [ "text" "json" ]
+  }
 
   def "nu-complete uv audit index_strategy" [] {
     [ "first-index" "unsafe-first-match" "unsafe-best-match" ]
@@ -1685,18 +1689,19 @@ module completions {
   export extern "uv audit" [
     --no-extra: string        # Don't audit the specified optional dependencies
     --no-dev                  # Don't audit the development dependency group [env: UV_NO_DEV=]
-    --no-group: string        # Don't audit the specified dependency group
+    --no-group: string        # Don't audit the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Don't audit the default dependency groups
     --only-group: string      # Only audit dependencies from the specified dependency group
     --only-dev                # Only audit the development dependency group
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Audit the requirements without locking the project [env: UV_FROZEN=]
+    --output-format: string@"nu-complete uv audit output_format" # Select the output format
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --index: string           # The URLs to use when resolving dependencies, in addition to the default index
     --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -1722,7 +1727,7 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv audit link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --script: path            # Audit the specified PEP 723 Python script, rather than the current project
     --python-version: string  # The Python version to use when auditing
     --python-platform: string@"nu-complete uv audit python_platform" # The platform to use when auditing
@@ -1742,7 +1747,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv audit color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1789,7 +1794,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -1900,13 +1905,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1928,7 +1933,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool run color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2038,13 +2043,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -2067,7 +2072,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool uvx color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2173,13 +2178,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -2200,7 +2205,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool install color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2296,13 +2301,13 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv tool upgrade python_preference"
@@ -2315,7 +2320,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool upgrade color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2371,7 +2376,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool list color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2419,7 +2424,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool uninstall color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2467,7 +2472,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool update-shell color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2515,7 +2520,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv tool dir color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2562,7 +2567,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2621,7 +2626,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python list color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2683,7 +2688,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python install color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2738,7 +2743,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python upgrade color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2793,7 +2798,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python find color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2834,6 +2839,7 @@ module completions {
     --no-project              # Avoid validating the Python pin is compatible with the project or workspace
     --global                  # Update the global Python version pin
     --rm                      # Remove the Python version pin
+    --python-downloads-json-url: string # URL pointing to JSON of custom Python installations
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv python pin python_preference"
@@ -2846,7 +2852,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python pin color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2895,7 +2901,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python dir color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2944,7 +2950,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python uninstall color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -2992,7 +2998,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv python update-shell color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3039,7 +3045,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3151,7 +3157,7 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv pip compile link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -3221,7 +3227,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip compile color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3303,7 +3309,7 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -3350,7 +3356,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip sync color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3419,6 +3425,7 @@ module completions {
   export extern "uv pip install" [
     --requirements(-r): path  # Install the packages listed in the given files
     --editable(-e): string    # Install the editable package based on the provided local file path
+    --no-editable             # Install any editable dependencies as non-editable [env: UV_NO_EDITABLE=]
     --constraints(-c): path   # Constrain versions using the given requirements files
     --overrides: path         # Override versions using the given requirements files
     --excludes: path          # Exclude packages from resolution using the given requirements files
@@ -3457,7 +3464,7 @@ module completions {
     --compile-bytecode        # Compile Python files to bytecode after installation
     --no-compile-bytecode
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -3500,7 +3507,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip install color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3550,6 +3557,7 @@ module completions {
     --target(-t): path        # Uninstall packages from the specified `--target` directory
     --prefix: path            # Uninstall packages from the specified `--prefix` directory
     --dry-run                 # Perform a dry run, i.e., don't actually uninstall anything but print the resulting plan
+    --yes(-y)                 # Don't ask for confirmation of uninstall deletions
     --disable-pip-version-check
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
@@ -3563,7 +3571,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip uninstall color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3622,7 +3630,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip freeze color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3704,7 +3712,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip list color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3760,7 +3768,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip show color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3839,7 +3847,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip tree color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3895,7 +3903,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip check color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -3946,7 +3954,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv pip debug color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4035,7 +4043,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv venv color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4138,13 +4146,13 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv build link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -4160,7 +4168,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4228,7 +4236,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv publish color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4276,7 +4284,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv workspace color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4363,13 +4371,13 @@ module completions {
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv workspace metadata link_mode" # The method to use when installing packages from the global cache
     --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
-    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
     --no-build                # Don't build source distributions
     --build
-    --no-build-package: string # Don't build source distributions for a specific package
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
     --no-binary               # Don't install pre-built wheels
     --binary
-    --no-binary-package: string # Don't install pre-built wheels for a specific package
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -4386,7 +4394,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv workspace metadata color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4434,7 +4442,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv workspace dir color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4482,7 +4490,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv workspace list color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4529,7 +4537,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4576,7 +4584,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend build-sdist color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4625,7 +4633,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend build-wheel color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4674,7 +4682,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend build-editable color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4722,7 +4730,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend get-requires-for-build-sdist color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4769,7 +4777,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend get-requires-for-build-wheel color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4816,7 +4824,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend prepare-metadata-for-build-wheel color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4864,7 +4872,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend get-requires-for-build-editable color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4911,7 +4919,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv build-backend prepare-metadata-for-build-editable color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -4959,7 +4967,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv cache color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5007,7 +5015,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv cache clean color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5057,7 +5065,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv cache prune color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5104,7 +5112,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv cache dir color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5152,7 +5160,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv cache size color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5199,7 +5207,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv self color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5248,7 +5256,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv self update color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5302,7 +5310,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv self version color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5350,7 +5358,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv clean color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
@@ -5452,7 +5460,7 @@ module completions {
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
     --color: string@"nu-complete uv help color" # Control the use of color in output
-    --native-tls              # Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs

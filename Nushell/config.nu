@@ -1,28 +1,4 @@
-# config.nu
-#
-# Installed by:
-# version = "0.111.0"
-#
-# This file is used to override default Nushell settings, define
-# (or import) custom commands, or run any other startup tasks.
-# See https://www.nushell.sh/book/configuration.html
-#
-# This file is loaded after env.nu and before login.nu
-#
-# You can open this file in your default editor using:
-# config nu
-#
-# See `help config nu` for more options
-#
-# You can remove these comments if you want or leave
-# them for future reference.
-
 load-env {LANG: zh_CN.UTF-8}
-
-# Enable Gemini CLI's true color in WSL when using Windows Terminal.
-if ($env | get --optional WT_SESSION | is-not-empty) and (uname).kernel-name == Linux {
-    load-env {COLORTERM: truecolor}
-}
 
 $env.config.show_banner = false
 $env.config.completions.algorithm = "fuzzy"
@@ -49,60 +25,39 @@ let external_completer = { |spans: list<string>|
                 $commandline | str length
             ) | lines
         }
-        # pnpm | pnpm.cmd => {
-        #     let commandline = $spans | str join " "
-        #     let cursor = $commandline | str length
-        #     with-env {
-        #         SHELL: bash
-        #         COMP_CWORD: ($spans | length)
-        #         COMP_LINE: $commandline
-        #         COMP_POINT: $cursor
-        #     } {
-        #         let pnpm_path = # path to pnpm.cjs
-        #         node $pnpm_path completion-server -- $commandline | lines
-        #     }
-        # }
+        pnpm | pnpm.cmd => {
+            let commandline = $spans | str join " "
+            let cursor = $commandline | str length
+            with-env {
+                SHELL: bash
+                COMP_CWORD: ($spans | length)
+                COMP_LINE: $commandline
+                COMP_POINT: $cursor
+            } {
+                pwsh -NoLogo -NoProfile -File (which ^pnpm.ps1 | get 0.path) completion-server -- $commandline | lines
+            }
+        }
     }
 }
 $env.config.completions.external.completer = $external_completer
 
 source ./starship-init.nu
-# source ./completions/as-completion.nu
-# source ./completions/cargo-completion.nu
-# source ./completions/curl-completion.nu
+source ./completions/cargo-completion.nu
 source ./completions/git-completion.nu
-# source ./completions/make-completion.nu
-# source ./completions/mix-completion.nu
-# source ./completions/npm-completion.nu
-# source ./completions/rustup-completion.nu
-# source ./completions/ssh-completion.nu
-# source ./completions/tar-completion.nu
+source ./completions/make-completion.nu
+source ./completions/mix-completion.nu
+source ./completions/npm-completion.nu
+source ./completions/rustup-completion.nu
+source ./completions/ssh-completion.nu
+source ./completions/tar-completion.nu
 source ./completions/uv-completion.nu
 source ./completions/starship-completion.nu
 
 # def mix-build-release [] {
 #     with-env { MIX_ENV: prod } {
-#         mix release
+#         ^mix release
 #     }
 # }
-
-def --wrapped gemini [...rest] {
-    if ($env | get --optional http_proxy | is-not-empty) {
-        with-env {
-            NODE_NO_WARNINGS: 1,
-        } {
-            ^gemini.cmd ...$rest
-        }
-    } else {
-        with-env {
-            # http_proxy:  set your proxy here, e.g. http://127.0.0.1:7890
-            # https_proxy: set your proxy here, e.g. http://127.0.0.1:7890
-            NODE_NO_WARNINGS: 1,
-        } {
-            ^gemini.cmd ...$rest
-        }
-    }
-}
 
 # def --wrapped icx [...rest] {
 #     let base_path = which ^icx | get 0.path | path dirname --num-levels 2
@@ -129,6 +84,6 @@ def --wrapped gemini [...rest] {
 #                 $filename == $"($p.stem).($p.extension)"
 #             }
 #         } | get 0 | get 0
-#     print $"安装 ($package_name)"
+#     print $"Install Package: ($package_name)"
 #     tlmgr install $package_name | ignore
 # }
