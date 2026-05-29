@@ -463,6 +463,7 @@ module completions {
     --only-dev                # Only include the development dependency group
     --editable                # Install any non-editable dependencies, including the project and any workspace members, as editable
     --no-editable             # Install any editable dependencies, including the project and any workspace members, as non-editable [env: UV_NO_EDITABLE=]
+    --no-editable-package: string # Install the specified editable packages as non-editable
     --inexact                 # Do not remove extraneous packages present in the environment
     --exact                   # Perform an exact sync, removing extraneous packages
     --env-file: path          # Load environment variables from a `.env` file
@@ -686,6 +687,7 @@ module completions {
     --group: string           # Add the requirements to the specified dependency group
     --editable                # Add the requirements as editable
     --no-editable             # Don't add the requirements as editable [env: UV_NO_EDITABLE=]
+    --no-editable-package: string # Don't add the specified requirements as editable
     --raw                     # Add a dependency as provided
     --bounds: string@"nu-complete uv add bounds" # The kind of version specifier to use when adding dependencies
     --rev: string             # Commit to use when adding a dependency from Git
@@ -1100,6 +1102,7 @@ module completions {
     --all-groups              # Include dependencies from all dependency groups
     --editable                # Install any non-editable dependencies, including the project and any workspace members, as editable
     --no-editable             # Install any editable dependencies, including the project and any workspace members, as non-editable [env: UV_NO_EDITABLE=]
+    --no-editable-package: string # Install the specified editable packages as non-editable
     --inexact                 # Do not remove extraneous packages present in the environment
     --exact                   # Perform an exact sync, removing extraneous packages
     --active                  # Sync dependencies to the active virtual environment
@@ -1371,6 +1374,7 @@ module completions {
     --header
     --editable                # Export any non-editable dependencies, including the project and any workspace members, as editable
     --no-editable             # Export any editable dependencies, including the project and any workspace members, as non-editable [env: UV_NO_EDITABLE=]
+    --no-editable-package: string # Export the specified editable packages as non-editable
     --hashes                  # Include hashes for all dependencies
     --no-hashes               # Omit hashes in the generated output
     --output-file(-o): path   # Write the exported requirements to the given file
@@ -3426,6 +3430,7 @@ module completions {
     --requirements(-r): path  # Install the packages listed in the given files
     --editable(-e): string    # Install the editable package based on the provided local file path
     --no-editable             # Install any editable dependencies as non-editable [env: UV_NO_EDITABLE=]
+    --no-editable-package: string # Install the specified editable packages as non-editable
     --constraints(-c): path   # Constrain versions using the given requirements files
     --overrides: path         # Override versions using the given requirements files
     --excludes: path          # Exclude packages from resolution using the given requirements files
@@ -4007,6 +4012,7 @@ module completions {
     --no-project              # Avoid discovering a project or workspace
     --seed                    # Install seed packages (one or more of: `pip`, `setuptools`, and `wheel`) into the virtual environment [env: UV_VENV_SEED=]
     --clear(-c)               # Remove any existing files or directories at the target path [env: UV_VENV_CLEAR=]
+    --force                   # Allow `--clear` to remove a non-virtual environment directory
     --no-clear                # Fail without prompting if any existing files or directories are present at the target path
     --allow-existing          # Preserve any existing files or directories at the target path
     --prompt: string          # Provide an alternative prompt prefix for the virtual environment.
@@ -4381,6 +4387,7 @@ module completions {
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
+    --sync                    # Sync the environment to include module ownership metadata in the output
     --python(-p): string      # The Python interpreter to use during resolution.
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
