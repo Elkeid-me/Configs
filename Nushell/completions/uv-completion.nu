@@ -431,7 +431,7 @@ module completions {
   }
 
   def "nu-complete uv run python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv run python_preference" [] {
@@ -745,11 +745,11 @@ module completions {
     --python(-p): string      # The Python interpreter to use for resolving and syncing.
     --workspace               # Add the dependency as a workspace member
     --no-workspace            # Don't add the dependency as a workspace member
-    --no-install-project      # Do not install the current project
+    --no-install-project      # Do not install the current project [env: UV_NO_INSTALL_PROJECT=]
     --only-install-project    # Only install the current project
-    --no-install-workspace    # Do not install any workspace members, including the current project
+    --no-install-workspace    # Do not install any workspace members, including the current project [env: UV_NO_INSTALL_WORKSPACE=]
     --only-install-workspace  # Only install workspace members, including the current project
-    --no-install-local        # Do not install local path dependencies
+    --no-install-local        # Do not install local path dependencies [env: UV_NO_INSTALL_LOCAL=]
     --only-install-local      # Only install local path dependencies
     --no-install-package: string # Do not install the given package(s)
     --only-install-package: string # Only install the given package(s)
@@ -1070,7 +1070,7 @@ module completions {
   }
 
   def "nu-complete uv sync python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv sync python_preference" [] {
@@ -1107,11 +1107,11 @@ module completions {
     --exact                   # Perform an exact sync, removing extraneous packages
     --active                  # Sync dependencies to the active virtual environment
     --no-active               # Prefer project's virtual environment over an active environment
-    --no-install-project      # Do not install the current project
+    --no-install-project      # Do not install the current project [env: UV_NO_INSTALL_PROJECT=]
     --only-install-project    # Only install the current project
-    --no-install-workspace    # Do not install any workspace members, including the root project
+    --no-install-workspace    # Do not install any workspace members, including the root project [env: UV_NO_INSTALL_WORKSPACE=]
     --only-install-workspace  # Only install workspace members, including the root project
-    --no-install-local        # Do not install local path dependencies
+    --no-install-local        # Do not install local path dependencies [env: UV_NO_INSTALL_LOCAL=]
     --only-install-local      # Only install local path dependencies
     --no-install-package: string # Do not install the given package(s)
     --only-install-package: string # Only install the given package(s)
@@ -1310,6 +1310,54 @@ module completions {
     --help(-h)                # Display the concise help for this command
   ]
 
+  def "nu-complete uv upgrade python_preference" [] {
+    [ "only-managed" "managed" "system" "only-system" ]
+  }
+
+  def "nu-complete uv upgrade python_fetch" [] {
+    [ "automatic" "manual" "never" ]
+  }
+
+  def "nu-complete uv upgrade color" [] {
+    [ "auto" "always" "never" ]
+  }
+
+  # Upgrade a dependency in the project
+  export extern "uv upgrade" [
+    --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
+    --cache-dir: path         # Path to the cache directory
+    --python-preference: string@"nu-complete uv upgrade python_preference"
+    --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
+    --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
+    --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
+    --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
+    --python-fetch: string@"nu-complete uv upgrade python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --quiet(-q)               # Use quiet output
+    --verbose(-v)             # Use verbose output
+    --no-color                # Disable colors
+    --color: string@"nu-complete uv upgrade color" # Control the use of color in output
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --no-native-tls
+    --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
+    --no-system-certs
+    --offline                 # Disable network access [env: UV_OFFLINE=]
+    --no-offline
+    --allow-insecure-host: string # Allow insecure connections to a host
+    --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
+    --no-preview
+    --preview-features: string # Enable experimental preview features
+    --isolated                # Avoid discovering a `pyproject.toml` or `uv.toml` file [env: UV_ISOLATED=]
+    --show-settings           # Show the resolved settings for the current command
+    --no-progress             # Hide all progress outputs [env: UV_NO_PROGRESS=]
+    --no-installer-metadata   # Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories [env: UV_NO_INSTALLER_METADATA=]
+    --directory: path         # Change to the given directory prior to running the command
+    --project: path           # Discover a project in the given directory
+    --config-file: path       # The path to a `uv.toml` file to use for configuration
+    --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
+    --help(-h)                # Display the concise help for this command
+    package: string           # The package to upgrade
+  ]
+
   def "nu-complete uv export format" [] {
     [ "requirements.txt" "pylock.toml" "cyclonedx1.5" ]
   }
@@ -1372,6 +1420,10 @@ module completions {
     --annotate
     --no-header               # Exclude the comment header at the top of the generated output file
     --header
+    --emit-index-url          # Include `--index-url` and `--extra-index-url` entries in the generated output file
+    --no-emit-index-url
+    --emit-find-links         # Include `--find-links` entries in the generated output file
+    --no-emit-find-links
     --editable                # Export any non-editable dependencies, including the project and any workspace members, as editable
     --no-editable             # Export any editable dependencies, including the project and any workspace members, as non-editable [env: UV_NO_EDITABLE=]
     --no-editable-package: string # Export the specified editable packages as non-editable
@@ -1483,7 +1535,7 @@ module completions {
   }
 
   def "nu-complete uv tree python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv tree python_preference" [] {
@@ -1641,6 +1693,135 @@ module completions {
     ...extra_args: string     # Additional arguments to pass to Ruff
   ]
 
+  def "nu-complete uv check index_strategy" [] {
+    [ "first-index" "unsafe-first-match" "unsafe-best-match" ]
+  }
+
+  def "nu-complete uv check keyring_provider" [] {
+    [ "disabled" "subprocess" ]
+  }
+
+  def "nu-complete uv check resolution" [] {
+    [ "highest" "lowest" "lowest-direct" ]
+  }
+
+  def "nu-complete uv check prerelease" [] {
+    [ "disallow" "allow" "if-necessary" "explicit" "if-necessary-or-explicit" ]
+  }
+
+  def "nu-complete uv check fork_strategy" [] {
+    [ "fewest" "requires-python" ]
+  }
+
+  def "nu-complete uv check link_mode" [] {
+    [ "clone" "copy" "hardlink" "symlink" ]
+  }
+
+  def "nu-complete uv check python_preference" [] {
+    [ "only-managed" "managed" "system" "only-system" ]
+  }
+
+  def "nu-complete uv check python_fetch" [] {
+    [ "automatic" "manual" "never" ]
+  }
+
+  def "nu-complete uv check color" [] {
+    [ "auto" "always" "never" ]
+  }
+
+  # Run checks on the project
+  export extern "uv check" [
+    --extra: string           # Include optional dependencies from the specified extra name
+    --all-extras              # Include all optional dependencies
+    --no-extra: string        # Exclude the specified optional dependencies, if `--all-extras` is supplied
+    --no-all-extras
+    --dev                     # Include the development dependency group [env: UV_DEV=]
+    --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
+    --only-dev                # Only include the development dependency group
+    --group: string           # Include dependencies from the specified dependency group
+    --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
+    --no-default-groups       # Ignore the default dependency groups
+    --only-group: string      # Only include dependencies from the specified dependency group
+    --all-groups              # Include dependencies from all dependency groups
+    --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --frozen                  # Sync without updating the `uv.lock` file [env: UV_FROZEN=]
+    --no-sync                 # Avoid syncing the virtual environment [env: UV_NO_SYNC=]
+    --isolated                # Run checks without mutating project state [env: UV_ISOLATED=]
+    --python(-p): string      # The Python interpreter to use for the project environment
+    --ty-version: string      # The version of ty to use for type checking
+    --no-project              # Avoid discovering a project or workspace
+    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
+    --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
+    --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
+    --no-index                # Ignore the registry index (e.g., PyPI), instead relying on direct URL dependencies and those provided via `--find-links`
+    --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
+    --no-upgrade
+    --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
+    --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
+    --reinstall               # Reinstall all packages, regardless of whether they're already installed. Implies `--refresh`
+    --no-reinstall
+    --reinstall-package: string # Reinstall a specific package, regardless of whether it's already installed. Implies `--refresh-package`
+    --index-strategy: string@"nu-complete uv check index_strategy" # The strategy to use when resolving against multiple index URLs
+    --keyring-provider: string@"nu-complete uv check keyring_provider" # Attempt to use `keyring` for authentication for index URLs
+    --resolution: string@"nu-complete uv check resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
+    --prerelease: string@"nu-complete uv check prerelease" # The strategy to use when considering pre-release versions
+    --pre
+    --fork-strategy: string@"nu-complete uv check fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
+    --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
+    --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
+    --no-build-isolation      # Disable isolation when building source distributions
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
+    --build-isolation
+    --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
+    --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
+    --link-mode: string@"nu-complete uv check link_mode" # The method to use when installing packages from the global cache
+    --compile-bytecode        # Compile Python files to bytecode after installation
+    --no-compile-bytecode
+    --no-sources              # Ignore the `tool.uv.sources` table when resolving dependencies. Used to lock against the standards-compliant, publishable package metadata, as opposed to using any workspace, Git, URL, or local path sources
+    --no-sources-package: string # Don't use sources from the `tool.uv.sources` table for the specified packages [env: `UV_NO_SOURCES_PACKAGE`=]
+    --no-build                # Don't build source distributions
+    --build
+    --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
+    --no-binary               # Don't install pre-built wheels
+    --binary
+    --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --refresh                 # Refresh all cached data
+    --no-refresh
+    --refresh-package: string # Refresh cached data for a specific package
+    --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
+    --cache-dir: path         # Path to the cache directory
+    --python-preference: string@"nu-complete uv check python_preference"
+    --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
+    --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
+    --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
+    --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
+    --python-fetch: string@"nu-complete uv check python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --quiet(-q)               # Use quiet output
+    --verbose(-v)             # Use verbose output
+    --no-color                # Disable colors
+    --color: string@"nu-complete uv check color" # Control the use of color in output
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --no-native-tls
+    --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
+    --no-system-certs
+    --offline                 # Disable network access [env: UV_OFFLINE=]
+    --no-offline
+    --allow-insecure-host: string # Allow insecure connections to a host
+    --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
+    --no-preview
+    --preview-features: string # Enable experimental preview features
+    --show-settings           # Show the resolved settings for the current command
+    --no-progress             # Hide all progress outputs [env: UV_NO_PROGRESS=]
+    --no-installer-metadata   # Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories [env: UV_NO_INSTALLER_METADATA=]
+    --directory: path         # Change to the given directory prior to running the command
+    --project: path           # Discover a project in the given directory
+    --config-file: path       # The path to a `uv.toml` file to use for configuration
+    --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
+    --help(-h)                # Display the concise help for this command
+  ]
+
   def "nu-complete uv audit output_format" [] {
     [ "text" "json" ]
   }
@@ -1670,7 +1851,7 @@ module completions {
   }
 
   def "nu-complete uv audit python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv audit service_format" [] {
@@ -1844,7 +2025,7 @@ module completions {
   }
 
   def "nu-complete uv tool run python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv tool run torch_backend" [] {
@@ -1982,7 +2163,7 @@ module completions {
   }
 
   def "nu-complete uv tool uvx python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv tool uvx torch_backend" [] {
@@ -2121,7 +2302,7 @@ module completions {
   }
 
   def "nu-complete uv tool install python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv tool install torch_backend" [] {
@@ -2232,7 +2413,7 @@ module completions {
   ]
 
   def "nu-complete uv tool upgrade python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv tool upgrade index_strategy" [] {
@@ -3103,7 +3284,7 @@ module completions {
   }
 
   def "nu-complete uv pip compile python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv pip compile torch_backend" [] {
@@ -3265,7 +3446,7 @@ module completions {
   }
 
   def "nu-complete uv pip sync python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv pip sync torch_backend" [] {
@@ -3406,7 +3587,7 @@ module completions {
   }
 
   def "nu-complete uv pip install python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv pip install torch_backend" [] {
@@ -3874,7 +4055,7 @@ module completions {
   ]
 
   def "nu-complete uv pip check python_platform" [] {
-    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+    [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
   def "nu-complete uv pip check python_preference" [] {

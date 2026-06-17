@@ -237,11 +237,11 @@ module completions {
     | first 300             # limit the number of data for performance
     | each { |$it|
       if $it starts-with "1 " {
-        $it | parse --regex "1 (?P<short_status>\\S+) (?:\\S+\\s?){6} (?P<value>\\S+)"
+        $it | parse --regex "1 (?P<short_status>\\S+) (?:\\S+\\s?){6} (?P<value>.+)"
       } else if $it starts-with "2 " {
-        $it | parse --regex "2 (?P<short_status>\\S+) (?:\\S+\\s?){6} (?P<value>\\S+)"
+        $it | parse --regex "2 (?P<short_status>\\S+) (?:\\S+\\s?){6} (?P<value>.+)"
       } else if $it starts-with "u " {
-        $it | parse --regex "u (?P<short_status>\\S+) (?:\\S+\\s?){8} (?P<value>\\S+)"
+        $it | parse --regex "u (?P<short_status>\\S+) (?:\\S+\\s?){8} (?P<value>.+)"
       } else if $it starts-with "? " {
         $it | parse --regex "(?P<short_status>.{1}) (?P<value>.+)"
       } else {
@@ -250,6 +250,7 @@ module completions {
     }
     | flatten
     | where $it.short_status in $relevant_statuses
+    | update value { |row| if ($row.value | str contains " ") { $"`($row.value)`" } else { $row.value } }
     | insert "description" { |e| $short_status_descriptions | get $e.short_status}
   }
 
@@ -588,18 +589,18 @@ module completions {
     --no-merged                                                    # list unreachable branches
     --set-upstream-to: string@"nu-complete git available upstream" # set upstream for branch
     --unset-upstream                                               # remote upstream for branch
-    --all                                                          # list both remote and local branches
-    --copy                                                         # copy branch together with config and reflog
+    --all(-a)                                                      # list both remote and local branches
+    --copy(-c)                                                     # copy branch together with config and reflog
     --format                                                       # specify format for listing branches
-    --move                                                         # rename branch
+    --move(-m)                                                     # rename branch
     --points-at                                                    # list branches that point at an object
     --show-current                                                 # print the name of the current branch
-    --verbose                                                      # show commit and upstream for each branch
+    --verbose(-v)                                                  # show commit and upstream for each branch
     --color                                                        # use color in output
-    --quiet                                                        # suppress messages except errors
+    --quiet(-q)                                                    # suppress messages except errors
     --delete(-d)                                                   # delete branch
     -D                                                             # force delete branch
-    --list                                                         # list branches
+    --list(-l)                                                     # list branches
     --contains: string@"nu-complete git commits all"               # show only branches that contain the specified commit
     --no-contains                                                  # show only branches that don't contain specified commit
     --track(-t)                                                    # when creating a branch, set upstream

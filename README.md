@@ -22,6 +22,6 @@
 
   配置了 `mix` 的 Wrapper 脚本，简化 Elixir 程序的 Release 编译。
 
-`Nushell/completions` 下除 `uv` 和 `starship` 的补全外，均来自 [nushell/nu_scripts](https://github.com/nushell/nu_scripts)
+`Nushell/completions` 下除 `uv` 和 `starship` 的补全外，均来自 [nushell/nu_scripts](https://github.com/nushell/nu_scripts)。`uv` 和 `starship` 的补全来自它们自己。
 
 Feel free to use.
