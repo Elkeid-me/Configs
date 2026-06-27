@@ -14,9 +14,14 @@ $env.config.color_config = {shape_external: red_bold,
 $env.config.cursor_shape = {emacs: line}
 
 let pnpm_completer = if (uname | get kernel-name) == Windows_NT {
-    let pnpm_path = which ^pnpm.ps1 | get 0.path
-    {|commandline: string|
-        pwsh -NoLogo -NoProfile -File $pnpm_path completion-server -- $commandline | lines
+    let pnpm_path = which ^pnpm.ps1
+    if ($pnpm_path | is-empty) {
+        {|_|}
+    } else {
+        let pnpm_path = $pnpm_path | get 0.path
+        {|commandline: string|
+            pwsh -NoLogo -NoProfile -File $pnpm_path completion-server -- $commandline | lines
+        }
     }
 } else {
     {|commandline: string|
