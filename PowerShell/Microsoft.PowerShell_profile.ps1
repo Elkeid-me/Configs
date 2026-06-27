@@ -1,5 +1,5 @@
 # Starship
-(&starship init powershell) | Out-String | Invoke-Expression
+(& starship init powershell) | Out-String | Invoke-Expression
 # uv
 (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
 # rustup

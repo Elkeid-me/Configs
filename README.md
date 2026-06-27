@@ -18,9 +18,9 @@
 
   ~~Nushell 配置了 Gemini CLI 的 Wrapper 脚本，用以加载 `http_proxy` 和 `https_proxy` 环境变量。但相关地址需要手动配置。当然，如果 WSL 的网络设置为 Mirrored，且启用 Localhost Loopback，则这两个环境变量会自动设置。~~ Gemini CLI 已经死了。
 
-  配置了 `icx` 和 `icpx` 的 Wrapper 脚本，用以简化编译 OpenCL 程序。配置了 `tlmgr-install` 脚本，在使用 TinyTeX 时可以简化安装缺失的宏包。
-
   配置了 `mix` 的 Wrapper 脚本，简化 Elixir 程序的 Release 编译。
+
+  配置了 OpenCode 的 Wrapper 脚本，默认启用 WebSearch 和语言服务器支持，但关闭语言服务器的自动安装。
 
 `Nushell/completions` 下除 `uv` 和 `starship` 的补全外，均来自 [nushell/nu_scripts](https://github.com/nushell/nu_scripts)。`uv` 和 `starship` 的补全来自它们自己。
 

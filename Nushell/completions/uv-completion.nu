@@ -1731,6 +1731,7 @@ module completions {
 
   # Run checks on the project
   export extern "uv check" [
+    --script: path            # Run checks for the specified PEP 723 Python script, rather than the current project
     --extra: string           # Include optional dependencies from the specified extra name
     --all-extras              # Include all optional dependencies
     --no-extra: string        # Exclude the specified optional dependencies, if `--all-extras` is supplied
@@ -1749,6 +1750,7 @@ module completions {
     --isolated                # Run checks without mutating project state [env: UV_ISOLATED=]
     --python(-p): string      # The Python interpreter to use for the project environment
     --ty-version: string      # The version of ty to use for type checking
+    --show-version            # Display the version of ty that will be used for type checking
     --no-project              # Avoid discovering a project or workspace
     --index: string           # The URLs to use when resolving dependencies, in addition to the default index
     --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
@@ -1823,7 +1825,7 @@ module completions {
   ]
 
   def "nu-complete uv audit output_format" [] {
-    [ "text" "json" ]
+    [ "text" "json" "sarif" ]
   }
 
   def "nu-complete uv audit index_strategy" [] {
@@ -4530,6 +4532,7 @@ module completions {
 
   # View metadata about the current workspace
   export extern "uv workspace metadata" [
+    --script: path            # View metadata for the specified PEP 723 Python script, rather than the current workspace
     --locked                  # Check if the lockfile is up-to-date [env: UV_LOCKED=]
     --frozen                  # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
     --dry-run                 # Perform a dry run, without writing the lockfile
@@ -4666,6 +4669,7 @@ module completions {
   # List the members of a workspace
   export extern "uv workspace list" [
     --paths                   # Show paths instead of names
+    --scripts                 # List all standalone scripts with inline metadata in the workspace
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv workspace list python_preference"
@@ -5237,7 +5241,7 @@ module completions {
     [ "auto" "always" "never" ]
   }
 
-  # Prune all unreachable objects from the cache
+  # Prune dangling cache entries and cached environments
   export extern "uv cache prune" [
     --ci                      # Optimize the cache for persistence in a continuous integration environment, like GitHub Actions
     --force                   # Force removal of the cache, ignoring in-use checks
