@@ -1,6 +1,16 @@
-load-env {LANG: zh_CN.UTF-8}
+let kernel_name = uname | get kernel-name
 
-if ((uname | get kernel-name) == Linux and ($env.WT_SESSION | is-not-empty)) {
+if $kernel_name != Windows_NT {
+    load-env {LANG: zh_CN.UTF-8}
+}
+
+if (which ^rustup | is-not-empty) {
+    load-env {
+        RUSTUP_DIST_SERVER: "https://mirrors.tuna.tsinghua.edu.cn/rustup"
+    }
+}
+
+if ($kernel_name == Linux and ($env.WT_SESSION | is-not-empty)) {
     load-env {COLORTERM: truecolor}
 }
 
@@ -13,14 +23,15 @@ $env.config.color_config = {shape_external: red_bold,
                             shape_externalarg: white}
 $env.config.cursor_shape = {emacs: line}
 
-let pnpm_completer = if (uname | get kernel-name) == Windows_NT {
+let pnpm_completer = if $kernel_name == Windows_NT {
     let pnpm_path = which ^pnpm.ps1
     if ($pnpm_path | is-empty) {
         {|_|}
     } else {
         let pnpm_path = $pnpm_path | get 0.path
         {|commandline: string|
-            pwsh -NoLogo -NoProfile -File $pnpm_path completion-server -- $commandline | lines
+            (pwsh -NoLogo -NoProfile -File $pnpm_path
+                completion-server -- $commandline | lines)
         }
     }
 } else {
@@ -59,9 +70,6 @@ let external_completer = {|spans: list<string>|
     }
 }
 $env.config.completions.external.completer = $external_completer
-
-unlet $pnpm_completer
-unlet $external_completer
 
 source ./starship-init.nu
 source ./completions/cargo-completion.nu
@@ -136,3 +144,7 @@ def compile-latex [path: string] {
         tlmgr-install $file_name
     }
 }
+
+unlet $kernel_name
+unlet $external_completer
+unlet $pnpm_completer
