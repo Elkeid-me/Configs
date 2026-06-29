@@ -72,6 +72,7 @@ module completions {
   # Prints a preset config
   export extern "starship preset" [
     --output(-o): path        # Output the preset to a file instead of stdout
+    --force(-f)               # Forcibly overwrite the output file if it already exists
     --list(-l)                # List out all preset names
     --help(-h)                # Print help
     name?: string@"nu-complete starship preset name" # The name of preset to be printed
