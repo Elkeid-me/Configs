@@ -10,7 +10,7 @@ if (which ^rustup | is-not-empty) {
     }
 }
 
-if ($kernel_name == Linux and ($env.WT_SESSION | is-not-empty)) {
+if ($kernel_name == Linux and $env has WT_SESSION) {
     load-env {COLORTERM: truecolor}
 }
 
