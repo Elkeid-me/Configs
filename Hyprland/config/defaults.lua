@@ -1,2 +1,2 @@
-TERMINAL     = "kitty"
+TERMINAL     = "ghostty"
 FILE_MANAGER = "nautilus"
