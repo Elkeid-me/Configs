@@ -1510,6 +1510,10 @@ module completions {
     --help(-h)                # Display the concise help for this command
   ]
 
+  def "nu-complete uv tree format" [] {
+    [ "text" "json" ]
+  }
+
   def "nu-complete uv tree index_strategy" [] {
     [ "first-index" "unsafe-first-match" "unsafe-best-match" ]
   }
@@ -1553,6 +1557,7 @@ module completions {
   # Display the project's dependency tree
   export extern "uv tree" [
     --universal               # Show a platform-independent dependency tree
+    --format: string@"nu-complete uv tree format" # The format in which to display the dependency graph
     --depth(-d): string       # Maximum display depth of the dependency tree
     --prune: string           # Prune the given package from the display of the dependency tree
     --package: string         # Display only the specified packages
@@ -1731,6 +1736,8 @@ module completions {
 
   # Run checks on the project
   export extern "uv check" [
+    --all-packages            # Check all packages in the workspace
+    --package: string         # Check specific packages in the workspace
     --script: path            # Run checks for the specified PEP 723 Python script, rather than the current project
     --extra: string           # Include optional dependencies from the specified extra name
     --all-extras              # Include all optional dependencies
@@ -2031,7 +2038,7 @@ module completions {
   }
 
   def "nu-complete uv tool run torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv tool run generate_shell_completion" [] {
@@ -2169,7 +2176,7 @@ module completions {
   }
 
   def "nu-complete uv tool uvx torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv tool uvx generate_shell_completion" [] {
@@ -2308,7 +2315,7 @@ module completions {
   }
 
   def "nu-complete uv tool install torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv tool install python_preference" [] {
@@ -3290,7 +3297,7 @@ module completions {
   }
 
   def "nu-complete uv pip compile torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv pip compile resolver" [] {
@@ -3452,7 +3459,7 @@ module completions {
   }
 
   def "nu-complete uv pip sync torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv pip sync python_preference" [] {
@@ -3593,7 +3600,7 @@ module completions {
   }
 
   def "nu-complete uv pip install torch_backend" [] {
-    [ "auto" "cpu" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
+    [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
 
   def "nu-complete uv pip install python_preference" [] {
@@ -4572,6 +4579,7 @@ module completions {
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
     --sync                    # Sync the environment to include module ownership metadata in the output
+    --active                  # Sync dependencies to the active virtual environment
     --python(-p): string      # The Python interpreter to use during resolution.
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
