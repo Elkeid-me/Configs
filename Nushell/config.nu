@@ -76,6 +76,7 @@ source ./completions/cargo-completion.nu
 source ./completions/docker-completion.nu
 source ./completions/git-completion.nu
 source ./completions/helix-completion.nu
+source ./completions/just-completion.nu
 source ./completions/make-completion.nu
 source ./completions/mix-completion.nu
 source ./completions/npm-completion.nu
@@ -92,7 +93,7 @@ def rm-history [] {
 }
 
 def update-completions [] {
-    [cargo docker git helix make mix npm rustup ssh starship tar uv ya yazi] |
+    [cargo docker git helix just make mix npm rustup ssh starship tar uv ya yazi] |
         each {|program|
             print $"Updating completions script for ($program)..."
             let completion_script_path = $nu.default-config-dir |

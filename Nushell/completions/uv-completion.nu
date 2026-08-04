@@ -454,13 +454,13 @@ module completions {
     --no-all-extras
     --dev                     # Include the development dependency group [env: UV_DEV=]
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
+    --only-dev                # Only include the development dependency group
     --group: string           # Include dependencies from the specified dependency group
     --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
     --module(-m)              # Run a Python module
-    --only-dev                # Only include the development dependency group
     --editable                # Install any non-editable dependencies, including the project and any workspace members, as editable
     --no-editable             # Install any editable dependencies, including the project and any workspace members, as non-editable [env: UV_NO_EDITABLE=]
     --no-editable-package: string # Install the specified editable packages as non-editable
@@ -496,13 +496,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv run keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv run resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv run prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv run fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv run link_mode" # The method to use when installing packages from the global cache
@@ -717,13 +718,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv add keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv add resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv add prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv add fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv add link_mode" # The method to use when installing packages from the global cache
@@ -850,13 +852,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv remove keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv remove resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv remove prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv remove fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv remove link_mode" # The method to use when installing packages from the global cache
@@ -982,13 +985,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv version keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv version resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv version prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv version fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv version link_mode" # The method to use when installing packages from the global cache
@@ -1135,13 +1139,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv sync keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv sync resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv sync prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv sync fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv sync link_mode" # The method to use when installing packages from the global cache
@@ -1255,13 +1260,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv lock keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv lock resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv lock prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv lock fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv lock link_mode" # The method to use when installing packages from the global cache
@@ -1324,6 +1330,7 @@ module completions {
 
   # Upgrade a dependency in the project
   export extern "uv upgrade" [
+    --exclude: string         # Exclude the named package from upgrades
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv upgrade python_preference"
@@ -1355,7 +1362,7 @@ module completions {
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
     --help(-h)                # Display the concise help for this command
-    package: string           # The package to upgrade
+    ...packages: string       # The packages to upgrade
   ]
 
   def "nu-complete uv export format" [] {
@@ -1454,13 +1461,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv export keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv export resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv export prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv export fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv export link_mode" # The method to use when installing packages from the global cache
@@ -1566,8 +1574,8 @@ module completions {
     --outdated                # Show the latest available version of each package in the tree
     --show-sizes              # Show compressed wheel sizes for packages in the tree
     --dev                     # Include the development dependency group [env: UV_DEV=]
-    --only-dev                # Only include the development dependency group
     --no-dev                  # Disable the development dependency group [env: UV_NO_DEV=]
+    --only-dev                # Only include the development dependency group
     --group: string           # Include dependencies from the specified dependency group
     --no-group: string        # Disable the specified dependency group [env: `UV_NO_GROUP`=]
     --no-default-groups       # Ignore the default dependency groups
@@ -1595,13 +1603,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv tree keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tree resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv tree prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv tree fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tree link_mode" # The method to use when installing packages from the global cache
@@ -1736,6 +1745,7 @@ module completions {
 
   # Run checks on the project
   export extern "uv check" [
+    --fix                     # Apply safe fixes to resolve type-checking errors
     --all-packages            # Check all packages in the workspace
     --package: string         # Check specific packages in the workspace
     --script: path            # Run checks for the specified PEP 723 Python script, rather than the current project
@@ -1776,13 +1786,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv check keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv check resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv check prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv check fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv check link_mode" # The method to use when installing packages from the global cache
@@ -1910,13 +1921,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv audit keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv audit resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv audit prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv audit fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv audit link_mode" # The method to use when installing packages from the global cache
@@ -2086,13 +2098,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv tool run keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tool run resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv tool run prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv tool run fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tool run link_mode" # The method to use when installing packages from the global cache
@@ -2224,13 +2237,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv tool uvx keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tool uvx resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv tool uvx prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv tool uvx fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tool uvx link_mode" # The method to use when installing packages from the global cache
@@ -2359,13 +2373,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv tool install keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tool install resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv tool install prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv tool install fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tool install link_mode" # The method to use when installing packages from the global cache
@@ -2482,13 +2497,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv tool upgrade keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv tool upgrade resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv tool upgrade prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv tool upgrade fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-setting-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv tool upgrade link_mode" # The method to use when installing packages from the global cache
@@ -2558,6 +2574,7 @@ module completions {
     --outdated                # List outdated tools
     --no-outdated
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
+    --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --python-preference: string@"nu-complete uv tool list python_preference"
     --no-python-downloads
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
@@ -3227,6 +3244,7 @@ module completions {
 
   # Manage Python packages with a pip-compatible interface
   export extern "uv pip" [
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip python_preference"
@@ -3340,13 +3358,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv pip compile keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv pip compile resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv pip compile prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv pip compile fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv pip compile link_mode" # The method to use when installing packages from the global cache
@@ -3400,7 +3419,6 @@ module completions {
     --no-reuse-hashes
     --resolver: string@"nu-complete uv pip compile resolver"
     --max-rounds: string
-    --cert: string
     --client-cert: string
     --emit-trusted-host
     --no-emit-trusted-host
@@ -3409,6 +3427,7 @@ module completions {
     --emit-options
     --no-emit-options
     --pip-args: string
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip compile python_preference"
@@ -3533,11 +3552,11 @@ module completions {
     --ask(-a)
     --python-executable: string
     --user
-    --cert: string
     --client-cert: string
     --config: string
     --no-config
     --pip-args: string
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip sync python_preference"
@@ -3646,13 +3665,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv pip install keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv pip install resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv pip install prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv pip install fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv pip install link_mode" # The method to use when installing packages from the global cache
@@ -3690,6 +3710,7 @@ module completions {
     --torch-backend: string@"nu-complete uv pip install torch_backend" # The backend to use when fetching packages in the PyTorch ecosystem (e.g., `cpu`, `cu126`, or `auto`)
     --disable-pip-version-check
     --user
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip install python_preference"
@@ -3754,6 +3775,7 @@ module completions {
     --dry-run                 # Perform a dry run, i.e., don't actually uninstall anything but print the resulting plan
     --yes(-y)                 # Don't ask for confirmation of uninstall deletions
     --disable-pip-version-check
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip uninstall python_preference"
@@ -3813,6 +3835,7 @@ module completions {
     --target(-t): path        # List packages from the specified `--target` directory
     --prefix: path            # List packages from the specified `--prefix` directory
     --disable-pip-version-check
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip freeze python_preference"
@@ -3889,12 +3912,14 @@ module completions {
     --index-strategy: string@"nu-complete uv pip list index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv pip list keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
+    --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --python(-p): string      # The Python interpreter for which packages should be listed.
     --system                  # List packages in the system Python environment
     --no-system
     --target(-t): path        # List packages from the specified `--target` directory
     --prefix: path            # List packages from the specified `--prefix` directory
     --disable-pip-version-check
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip list python_preference"
@@ -3951,6 +3976,7 @@ module completions {
     --target(-t): path        # Show a package from the specified `--target` directory
     --prefix: path            # Show a package from the specified `--prefix` directory
     --disable-pip-version-check
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip show python_preference"
@@ -4026,10 +4052,12 @@ module completions {
     --index-strategy: string@"nu-complete uv pip tree index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv pip tree keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
+    --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --python(-p): string      # The Python interpreter for which packages should be listed.
     --system                  # List packages in the system Python environment
     --no-system
     --disable-pip-version-check
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip tree python_preference"
@@ -4086,6 +4114,7 @@ module completions {
     --no-system
     --python-version: string  # The Python version against which packages should be checked
     --python-platform: string@"nu-complete uv pip check python_platform" # The platform for which packages should be checked
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip check python_preference"
@@ -4137,6 +4166,7 @@ module completions {
     --python-version: string
     --implementation: string
     --abi: string
+    --cert: path              # Path to a PEM-encoded CA certificate bundle
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv pip debug python_preference"
@@ -4218,7 +4248,7 @@ module completions {
     --index-strategy: string@"nu-complete uv venv index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv venv keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
-    --exclude-newer-package: string # Limit candidate packages for a specific package to those that were uploaded prior to the given date
+    --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv venv link_mode" # The method to use when installing packages from the global cache
     --refresh                 # Refresh all cached data
     --no-refresh
@@ -4331,13 +4361,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv build keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv build resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv build prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv build fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv build link_mode" # The method to use when installing packages from the global cache
@@ -4557,13 +4588,14 @@ module completions {
     --keyring-provider: string@"nu-complete uv workspace metadata keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --resolution: string@"nu-complete uv workspace metadata resolution" # The strategy to use when selecting between the different compatible versions for a given package requirement
     --prerelease: string@"nu-complete uv workspace metadata prerelease" # The strategy to use when considering pre-release versions
+    --prerelease-package: string # The strategy to use when considering pre-release versions for a specific package
     --pre
     --fork-strategy: string@"nu-complete uv workspace metadata fork_strategy" # The strategy to use when selecting multiple versions of a given package across Python versions and platforms
     --config-setting(-C): string # Settings to pass to the PEP 517 build backend, specified as `KEY=VALUE` pairs
     --config-settings-package: string # Settings to pass to the PEP 517 build backend for a specific package, specified as `PACKAGE:KEY=VALUE` pairs
     --no-build-isolation      # Disable isolation when building source distributions
-    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --build-isolation
+    --no-build-isolation-package: string # Disable isolation when building source distributions for a specific package
     --exclude-newer: string   # Limit candidate packages to those that were uploaded prior to the given date
     --exclude-newer-package: string # Limit candidate packages for specific packages to those that were uploaded prior to the given date
     --link-mode: string@"nu-complete uv workspace metadata link_mode" # The method to use when installing packages from the global cache
