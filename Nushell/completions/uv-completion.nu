@@ -1764,10 +1764,12 @@ module completions {
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Sync without updating the `uv.lock` file [env: UV_FROZEN=]
     --no-sync                 # Avoid syncing the virtual environment [env: UV_NO_SYNC=]
+    --no-install-project      # Do not install the current project [env: UV_NO_INSTALL_PROJECT=]
     --isolated                # Run checks without mutating project state [env: UV_ISOLATED=]
     --python(-p): string      # The Python interpreter to use for the project environment
     --ty-version: string      # The version of ty to use for type checking
     --show-version            # Display the version of ty that will be used for type checking
+    --show-command            # Display the ty command that will be used for type checking
     --no-project              # Avoid discovering a project or workspace
     --index: string           # The URLs to use when resolving dependencies, in addition to the default index
     --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
@@ -1846,6 +1848,10 @@ module completions {
     [ "text" "json" "sarif" ]
   }
 
+  def "nu-complete uv audit service_format" [] {
+    [ "osv" ]
+  }
+
   def "nu-complete uv audit index_strategy" [] {
     [ "first-index" "unsafe-first-match" "unsafe-best-match" ]
   }
@@ -1874,10 +1880,6 @@ module completions {
     [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
-  def "nu-complete uv audit service_format" [] {
-    [ "osv" ]
-  }
-
   def "nu-complete uv audit python_preference" [] {
     [ "only-managed" "managed" "system" "only-system" ]
   }
@@ -1901,6 +1903,10 @@ module completions {
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Audit the requirements without locking the project [env: UV_FROZEN=]
     --output-format: string@"nu-complete uv audit output_format" # Select the output format
+    --ignore: string          # Ignore a vulnerability by ID
+    --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
+    --service-format: string@"nu-complete uv audit service_format" # The service format to use for vulnerability lookups
+    --service-url: string     # The URL to vulnerability service API endpoint
     --no-build                # Don't build source distributions
     --build
     --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
@@ -1937,10 +1943,6 @@ module completions {
     --script: path            # Audit the specified PEP 723 Python script, rather than the current project
     --python-version: string  # The Python version to use when auditing
     --python-platform: string@"nu-complete uv audit python_platform" # The platform to use when auditing
-    --ignore: string          # Ignore a vulnerability by ID
-    --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
-    --service-format: string@"nu-complete uv audit service_format" # The service format to use for vulnerability lookups
-    --service-url: string     # The URL to vulnerability service API endpoint
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv audit python_preference"
@@ -2606,6 +2608,68 @@ module completions {
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
     --help(-h)                # Display the concise help for this command
+  ]
+
+  def "nu-complete uv tool audit output_format" [] {
+    [ "text" "json" "sarif" ]
+  }
+
+  def "nu-complete uv tool audit service_format" [] {
+    [ "osv" ]
+  }
+
+  def "nu-complete uv tool audit python_preference" [] {
+    [ "only-managed" "managed" "system" "only-system" ]
+  }
+
+  def "nu-complete uv tool audit python_fetch" [] {
+    [ "automatic" "manual" "never" ]
+  }
+
+  def "nu-complete uv tool audit color" [] {
+    [ "auto" "always" "never" ]
+  }
+
+  # Audit installed tools and their dependencies
+  export extern "uv tool audit" [
+    --all                     # Audit all installed tools
+    --output-format: string@"nu-complete uv tool audit output_format" # Select the output format
+    --ignore: string          # Ignore a vulnerability by ID
+    --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
+    --service-format: string@"nu-complete uv tool audit service_format" # The service format to use for vulnerability lookups
+    --service-url: string     # The URL to vulnerability service API endpoint
+    --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
+    --cache-dir: path         # Path to the cache directory
+    --python-preference: string@"nu-complete uv tool audit python_preference"
+    --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
+    --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
+    --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
+    --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
+    --python-fetch: string@"nu-complete uv tool audit python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --quiet(-q)               # Use quiet output
+    --verbose(-v)             # Use verbose output
+    --no-color                # Disable colors
+    --color: string@"nu-complete uv tool audit color" # Control the use of color in output
+    --native-tls              # (Deprecated: use `--system-certs` instead.) Whether to load TLS certificates from the platform's native certificate store [env: UV_NATIVE_TLS=]
+    --no-native-tls
+    --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
+    --no-system-certs
+    --offline                 # Disable network access [env: UV_OFFLINE=]
+    --no-offline
+    --allow-insecure-host: string # Allow insecure connections to a host
+    --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
+    --no-preview
+    --preview-features: string # Enable experimental preview features
+    --isolated                # Avoid discovering a `pyproject.toml` or `uv.toml` file [env: UV_ISOLATED=]
+    --show-settings           # Show the resolved settings for the current command
+    --no-progress             # Hide all progress outputs [env: UV_NO_PROGRESS=]
+    --no-installer-metadata   # Skip writing `uv` installer metadata files (e.g., `INSTALLER`, `REQUESTED`, and `direct_url.json`) to site-packages `.dist-info` directories [env: UV_NO_INSTALLER_METADATA=]
+    --directory: path         # Change to the given directory prior to running the command
+    --project: path           # Discover a project in the given directory
+    --config-file: path       # The path to a `uv.toml` file to use for configuration
+    --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
+    --help(-h)                # Display the concise help for this command
+    ...name: string           # The names of the installed tools to audit
   ]
 
   def "nu-complete uv tool uninstall python_preference" [] {
@@ -5365,6 +5429,10 @@ module completions {
     --help(-h)                # Display the concise help for this command
   ]
 
+  def "nu-complete uv cache size output_format" [] {
+    [ "auto" "human" "machine" ]
+  }
+
   def "nu-complete uv cache size python_preference" [] {
     [ "only-managed" "managed" "system" "only-system" ]
   }
@@ -5379,7 +5447,8 @@ module completions {
 
   # Show the cache size
   export extern "uv cache size" [
-    --human(-H)               # Display the cache size in human-readable format (e.g., `1.2 GiB` instead of raw bytes)
+    --output-format: string@"nu-complete uv cache size output_format" # Select the output format
+    --human(-H)               # Display the cache size in human-readable format (e.g., `1.2GiB` instead of raw bytes)
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv cache size python_preference"
