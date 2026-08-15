@@ -1,0 +1,3 @@
+spawn-at-startup "ashell"
+spawn-at-startup "swaybg" "-i" "/home/elkeid/图片/wallpaper.png"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"

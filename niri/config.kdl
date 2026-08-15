@@ -1,0 +1,7 @@
+include "./configs/autostart.kdl"
+include "./configs/display.kdl"
+include "./configs/input.kdl"
+include "./configs/keybinds.kdl"
+include "./configs/misc.kdl"
+include "./configs/rules.kdl"
+include "./configs/layout.kdl"

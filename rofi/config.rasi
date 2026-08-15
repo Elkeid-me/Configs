@@ -1,0 +1,117 @@
+configuration {
+    show-icons: true;
+    drun-display-format: "{name}";
+    font: "Source Han Sans SC 14";
+}
+
+* {
+    background: #1E212780;
+    foreground: #D8DEE9;
+    selected: #7fc8ff;
+    selected-text: #1E2127;
+    border-col: #7fc8ff;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 800px;
+    height: 525px;
+    enabled: true;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 12px;
+    background-color: @background;
+    cursor: "default";
+}
+
+mainbox {
+    enabled: true;
+    children: ["inputbar", "listview"];
+    background-color: transparent;
+}
+
+inputbar {
+    enabled: true;
+    spacing: 0px;
+    background-color: transparent;
+    children: ["entry"];
+}
+
+entry {
+    enabled: true;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #3B4252;
+    text-color: @foreground;
+    cursor: text;
+    placeholder: "Welcome User";
+    placeholder-color: #8fa1b3;
+    horizontal-align: 0.5;
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    padding: 10px;
+    spacing: 10px;
+    background-color: transparent;
+}
+
+element {
+    enabled: true;
+    spacing: 15px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+element normal.active {
+    background-color: transparent;
+    text-color: @selected;
+}
+
+element alternate.active {
+    background-color: transparent;
+    text-color: @selected;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @selected-text;
+}
+
+element selected.active {
+    background-color: @selected;
+    text-color: @selected-text;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 26px;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+}

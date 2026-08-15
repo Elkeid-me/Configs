@@ -1,0 +1,19 @@
+[osd]
+enabled = true
+timeout = 1500
+show_volume_percentage = true
+show_brightness_percentage = true
+
+[animations]
+enabled = true
+
+[appearance]
+opacity = 0.75
+
+[modules]
+left = [ "Workspaces" ]
+center = [ "WindowTitle" ]
+right = [ "Notifications", "Tray", "Tempo", "Settings" ]
+
+[tempo]
+clock_format = "%Y/%m/%d  %R"
