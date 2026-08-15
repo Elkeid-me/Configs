@@ -117,6 +117,33 @@ module completions {
     kinds: string             # Kind of messages to subscribe to, separated by commas if multiple
   ]
 
+  # Manage the cache
+  export extern "ya cache" [
+    --help(-h)                # Print help
+  ]
+
+  # Clear the cache directory
+  export extern "ya cache clear" [
+    --help(-h)                # Print help
+  ]
+
+  # Print this message or the help of the given subcommand(s)
+  export extern "ya cache help" [
+  ]
+
+  # Clear the cache directory
+  export extern "ya cache help clear" [
+  ]
+
+  # Print this message or the help of the given subcommand(s)
+  export extern "ya cache help help" [
+  ]
+
+  # Print environment and configuration information
+  export extern "ya env" [
+    --help(-h)                # Print help
+  ]
+
   # Print this message or the help of the given subcommand(s)
   export extern "ya help" [
   ]
@@ -167,6 +194,18 @@ module completions {
 
   # Subscribe to messages from all remote instances
   export extern "ya help sub" [
+  ]
+
+  # Manage the cache
+  export extern "ya help cache" [
+  ]
+
+  # Clear the cache directory
+  export extern "ya help cache clear" [
+  ]
+
+  # Print environment and configuration information
+  export extern "ya help env" [
   ]
 
   # Print this message or the help of the given subcommand(s)
