@@ -98,7 +98,7 @@ def update-completions [] {
             print $"Updating completions script for ($program)..."
             let completion_script_path = $nu.default-config-dir |
                 path join completions $"($program)-completion.nu"
-            let completion_script_url = $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/Nushell/completions/($program)-completion.nu"
+            let completion_script_url = $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/nushell/completions/($program)-completion.nu"
             http get $completion_script_url | save --force $completion_script_path
         } | ignore
 }

@@ -479,8 +479,8 @@ module completions {
     --frozen                  # Run without updating the `uv.lock` file [env: UV_FROZEN=]
     --script(-s)              # Run the given path as a Python script
     --gui-script              # Run the given path as a Python GUI script
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -701,8 +701,8 @@ module completions {
     --frozen                  # Add dependencies without re-locking the project [env: UV_FROZEN=]
     --active                  # Prefer the active virtual environment over the project's virtual environment
     --no-active               # Prefer project's virtual environment over an active environment
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -835,8 +835,8 @@ module completions {
     --no-active               # Prefer project's virtual environment over an active environment
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Remove dependencies without re-locking the project [env: UV_FROZEN=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -968,8 +968,8 @@ module completions {
     --no-active               # Prefer project's virtual environment over an active environment
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Update the version without re-locking the project [env: UV_FROZEN=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1122,8 +1122,8 @@ module completions {
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Sync without updating the `uv.lock` file [env: UV_FROZEN=]
     --dry-run                 # Perform a dry run, without writing the lockfile or modifying the project environment
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1246,8 +1246,8 @@ module completions {
     --check-exists            # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
     --dry-run                 # Perform a dry run, without writing the lockfile
     --script: path            # Lock the specified Python script, rather than the current project
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1447,8 +1447,8 @@ module completions {
     --only-emit-package: string # Only emit the given package(s)
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --frozen                  # Do not update the `uv.lock` before exporting [env: UV_FROZEN=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1589,8 +1589,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1771,8 +1771,8 @@ module completions {
     --show-version            # Display the version of ty that will be used for type checking
     --show-command            # Display the ty command that will be used for type checking
     --no-project              # Avoid discovering a project or workspace
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -1913,8 +1913,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -2083,8 +2083,8 @@ module completions {
     --isolated                # Run the tool in an isolated virtual environment, ignoring any already-installed tools [env: UV_ISOLATED=]
     --env-file: path          # Load environment variables from a `.env` file
     --no-env-file             # Avoid reading environment variables from a `.env` file [env: UV_NO_ENV_FILE=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -2222,8 +2222,8 @@ module completions {
     --isolated                # Run the tool in an isolated virtual environment, ignoring any already-installed tools [env: UV_ISOLATED=]
     --env-file: path          # Load environment variables from a `.env` file
     --no-env-file             # Avoid reading environment variables from a `.env` file [env: UV_NO_ENV_FILE=]
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -2358,8 +2358,8 @@ module completions {
     --overrides: path         # Override versions using the given requirements files
     --excludes: path          # Exclude packages from resolution using the given requirements files
     --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -2486,8 +2486,8 @@ module completions {
     --upgrade(-U)             # Allow package upgrades, ignoring pinned versions in any existing output file. Implies `--refresh`
     --upgrade-package(-P): string # Allow upgrades for a specific package, ignoring pinned versions in any existing output file. Implies `--refresh-package`
     --upgrade-group: string   # Allow upgrades for all packages in a dependency group, ignoring pinned versions in any existing output file
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -3408,8 +3408,8 @@ module completions {
     --all-extras              # Include all optional dependencies
     --no-all-extras
     --group: string           # Install the specified dependency group from a `pyproject.toml`
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -3565,8 +3565,8 @@ module completions {
     --all-extras              # Include all optional dependencies
     --no-all-extras
     --group: string           # Install the specified dependency group from a `pylock.toml` or `pyproject.toml`
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -3712,8 +3712,8 @@ module completions {
     --all-extras              # Include all optional dependencies
     --no-all-extras
     --group: string           # Install the specified dependency group from a `pylock.toml` or `pyproject.toml`
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -3967,8 +3967,8 @@ module completions {
     --no-outdated
     --strict                  # Validate the Python environment, to detect packages with missing dependencies and other issues
     --no-strict
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -4107,8 +4107,8 @@ module completions {
     --show-sizes              # Show compressed wheel sizes for packages in the tree
     --strict                  # Validate the Python environment, to detect packages with missing dependencies and other issues
     --no-strict
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -4303,8 +4303,8 @@ module completions {
     --system-site-packages    # Give the virtual environment access to the system site packages directory
     --relocatable             # Make the virtual environment relocatable [env: UV_VENV_RELOCATABLE=]
     --no-relocatable          # Don't make the virtual environment relocatable
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -4411,8 +4411,8 @@ module completions {
     --verify-hashes
     --no-verify-hashes        # Disable validation of hashes in the requirements file
     --python(-p): string      # The Python interpreter to use for the build environment.
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
@@ -4638,8 +4638,8 @@ module completions {
     --locked                  # Check if the lockfile is up-to-date [env: UV_LOCKED=]
     --frozen                  # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
     --dry-run                 # Perform a dry run, without writing the lockfile
-    --index: string           # The URLs to use when resolving dependencies, in addition to the default index
-    --default-index: string   # The URL of the default package index (by default: <https://pypi.org/simple>)
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
     --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
     --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
