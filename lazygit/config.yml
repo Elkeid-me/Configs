@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+
 gui:
   theme:
     activeBorderColor:
@@ -28,3 +30,5 @@ gui:
 
   authorColors:
     '*': '#b4befe'
+
+  timeFormat: "2006/01/02"
