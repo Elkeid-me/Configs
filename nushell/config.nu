@@ -93,14 +93,24 @@ def rm-history [] {
     rm $nu.history-path
 }
 
-def update-completions [] {
+def update-completions [--force] {
     [cargo docker elan git helix just make mix npm rustup ssh starship tar uv ya yazi] |
         each {|program|
-            print $"Updating completions script for ($program)..."
             let completion_script_path = $nu.default-config-dir |
-                path join completions $"($program)-completion.nu"
-            let completion_script_url = $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/nushell/completions/($program)-completion.nu"
-            http get $completion_script_url | save --force $completion_script_path
+            path join completions $"($program)-completion.nu"
+            let completion_script_url = (
+                $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/nushell/completions/($program)-completion.nu"
+            )
+            if ($force or
+                not ($completion_script_path | path exists) or
+                ((date now) - (ls $completion_script_path | get 0.modified) > 1hr)) {
+                print $"Updating completions script for ($program)..."
+                with-env {
+                    no_proxy: $"($env.no_proxy),cdn.jsdelivr.net"
+                } {
+                    http get $completion_script_url | save --force $completion_script_path
+                }
+            }
         } | ignore
 }
 
