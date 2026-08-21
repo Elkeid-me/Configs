@@ -1,289 +1,294 @@
-module completions {
-    def "nu-complete rustup" [] {
-        ^rustup --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+export extern "rustup" [
+    --verbose(-v)    # Set log level to 'DEBUG' if 'RUSTUP_LOG' is unset
+    --quiet(-q)      # Disable progress output, set log level to 'WARN' if 'RUSTUP_LOG' is unset
+    --help(-h)       # Print help
+    --version(-V)    # Print version
+]
 
-    def "nu-complete rustup toolchain" [] {
-        ^rustup toolchain --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Install or update the given toolchains, or by default the active toolchain
+export extern "rustup install" [
+    --profile         # profile
+    --component(-c)   # Comma-separated list of components to be added on installation
+    --target(-t)      # Comma-separated list of targets to be added on installation
+    --no-self-update  # Don't perform self update when running the `rustup toolchain install` command
+    --no-update       # Don't try to update the installed toolchain
+    --force           # Force an update, even if some components are missing
+    --allow-downgrade # Allow rustup to downgrade the toolchain to satisfy your component choice
+    --force-non-host  # Install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+    --override        # Set the installed toolchain as the override for the current directory
+    --help(-h)        # Print help
+]
 
+# Uninstall the given toolchains
+export extern "rustup uninstall" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup toolchain list" [] {
-        ^rustup toolchain list
-        | lines
-        | append 'stable'
-        | append 'beta'
-        | append 'nightly'
-        | each { |line|
-            if ($line | str contains "(default)") {
-                {value: ($line | str replace " (default)" ""), description: "default"}
-            } else {
-                {value: $line, description: ""}
-            }
-        }
-    }
+# Dump information about the build
+export extern "rustup dump-testament" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup target" [] {
-        ^rustup target --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Install, uninstall, or list toolchains
+export extern "rustup toolchain" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup target list" [] {
-        ^rustup target list
-        | lines
-        | each { |line|
-            if ($line | str contains "installed") {
-                {value: ($line | str replace " (installed)" ""), description: "installed"}
-            } else {
-                {value: $line, description: ""}
-            }
-        }
-    }
+# List installed toolchains
+export extern "rustup toolchain list" [
+    --verbose(-v) # Enable verbose output with toolchain information
+    --quiet(-q)   # Force the output to be a single column
+    --help(-h)    # Print help
+]
 
-    def "nu-complete rustup target list --installed" [] {
-        ^rustup target list --installed
-        | lines
-    }
+# Install or update the given toolchains, or by default the active toolchain
+export extern "rustup toolchain install" [
+    --profile         # profile
+    --component(-c)   # Comma-separated list of components to be added on installation
+    --target(-t)      # Comma-separated list of targets to be added on installation
+    --no-self-update  # Don't perform self update when running the `rustup toolchain install` command
+    --no-update       # Don't try to update the installed toolchain
+    --force           # Force an update, even if some components are missing
+    --allow-downgrade # Allow rustup to downgrade the toolchain to satisfy your component choice
+    --force-non-host  # Install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+    --override        # Set the installed toolchain as the override for the current directory
+    --help(-h)        # Print help
+]
 
-    def "nu-complete rustup update" [] {
-        ^rustup toolchain list
-        | lines
-        | each { |line|
-            if ($line | str contains "default") {
-                {value: ($line | str replace " (default)" ""), description: "default"}
-            } else {
-                {value: $line, description: ""}
-            }
-        }
-    }
+# Install or update the given toolchains, or by default the active toolchain
+export extern "rustup toolchain uninstall" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup component" [] {
-        ^rustup component --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Create a custom toolchain by symlinking to a directory
+export extern "rustup toolchain link" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup component list" [] {
-        ^rustup component list
-        | lines
-        | each { |line|
-            if ($line | str contains "installed") {
-                {value: ($line | str replace " (installed)" ""), description: "installed"}
-            } else {
-                {value: $line, description: ""}
-            }
-        }
-    }
+# Print this message or the help of the given subcommand(s)
+export extern "rustup toolchain help" []
 
-    def "nu-complete rustup component list installed" [] {
-        ^rustup component list
-        | lines
-        | find --regex '^.+(?=\s\(installed)'
-    }
+# Set the default toolchain
+export extern "rustup default" [
+    --force-non-host # Install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+    --help(-h)       # Print help
+]
 
-    def "nu-complete rustup override" [] {
-        ^rustup override --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Show the active and installed toolchains or profiles
+export extern "rustup show" [
+    --verbose(-v) # Enable verbose output with rustc information for all installed toolchains
+    --help(-h)    # Print help
+]
+# Show the active toolchain
+export extern "rustup show active-toolchain" [
+    --verbose(-v) # Enable verbose output with rustc information
+    --help(-h)    # Print help
+]
 
-    def "nu-complete rustup override list" [] {
-        ^rustup override list
-        | lines
-        # TODO: I don't have any override to match
-        # TODO: exclude the result "no overrides"
-    }
+# Display the computed value of RUSTUP_HOME
+export extern "rustup show home" [
+    --help(-h)    # Print help
+]
 
-    def "nu-complete rustup override list installed" [] {
-        ^rustup override list
-        | lines
-        # TODO: I don't have any override to match
-        # TODO: exclude the result "no overrides"
-    }
+# Show the default profile used for the `rustup install` command
+export extern "rustup show profile" [
+    --help(-h)    # Print help
+]
 
-    def "nu-complete rustup self" [] {
-        ^rustup self --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Print this message or the help of the given subcommand(s)
+export extern "rustup show help" []
 
-    def "nu-complete rustup set" [] {
-        ^rustup set --help
-        | str replace --regex --multiline '(rustup[\s\S]*(?=SUBCOMMANDS:))' ''
-        | str replace --regex --multiline '\n+DISCUSSION:[\s\S]*' ''
-        | lines
-        | where $it starts-with "  "
-        | parse -r '\s*(?P<value>[^ ]+) \s*(?P<description>\w.*)'
-    }
+# Update Rust toolchains and rustup
+export extern "rustup update" [
+    --no-self-update # Don't perform self update when running the `rustup update` command
+    --force          # Force an update, even if some components are missing
+    --force-non-host # Install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
+    --help(-h)       # Print help
+]
 
-    def "nu-complete rustup set profile" [] {
-        ['minimal', 'default', 'complete']
-    }
+# Check for updates to Rust toolchains and rustup
+export extern "rustup check" [
+    --no-self-update # Don't check for self update when running the `rustup check` command
+    --help(-h)       # Print help
+]
 
-    def "nu-complete rustup set auto-self-update" [] {
-        ['enable', 'disable', 'check-only']
-    }
+# Modify a toolchain's supported targets
+export extern "rustup target" [
+    --help(-h) # Print help
+]
 
-    def "nu-complete rustup completions" [] {
-        ['bash', 'elvish', 'fish', 'powershell', 'zsh', 'cargo', 'rustup']
-    }
+# List installed and available targets
+export extern "rustup target list" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --installed # List only installed targets
+    --quiet(-q) # Force the output to be a single column
+    --help(-h)  # Print help
+]
 
-    def "nu-complete rustup completions shell" [] {
-        ['bash', 'elvish', 'fish', 'powershell', 'zsh']
-    }
+# Add a target to a Rust toolchain
+export extern "rustup target add" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --help(-h)  # Print help
+]
 
-    # ------------------ export extern commands ------------------
+# Remove a target from a Rust toolchain
+export extern "rustup target remove" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --help(-h)  # Print help
+]
 
-    export extern "rustup" [
-        command?: string@"nu-complete rustup"
-        --verbose(-v)    # Enable verbose output
-        --quiet(-q)      # Disable progress output
-        --help(-h)       # Print help information
-        --version(-V)    # Print version information
-    ]
+# Print this message or the help of the given subcommand(s)
+export extern "rustup target help" []
 
-    export extern "rustup help" [
-        command?: string@"nu-complete rustup"
-    ]
+# Modify a toolchain's installed components
+export extern "rustup component" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup update" [
-        command?: string@"nu-complete rustup update"
-        --help(-h)        # Print help information
-        --force           # Force an update, even if some components are missing
-        --force-non-host  # Install toolchains that require an emulator. See https://github.com/rust-lang/rustup/wiki/Non-host-toolchains
-        --no-self-update  # Don't perform self update when running the `rustup update` command
-    ]
+export extern "rustup component list" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --installed # List only installed components
+    --quiet(-q) # Force the output to be a single column
+    --help(-h)  # Print help
+]
+export extern "rustup component add" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --target    # target
+    --help(-h)  # Print help
+]
+export extern "rustup component remove" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --target    # target
+    --help(-h)  # Print help
+]
 
-    export extern "rustup default" [
-        command?: string@"nu-complete rustup toolchain list"
-    ]
+# Print this message or the help of the given subcommand(s)
+export extern "rustup component help" []
 
-    export extern "rustup toolchain" [
-        command?: string@"nu-complete rustup toolchain"
-        --help(-h)        # Print help information
-    ]
+# Modify toolchain overrides for directories
+export extern "rustup override" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup toolchain install" [
-        command?: string@"nu-complete rustup toolchain list"
-        --help(-h)        # Print help information
-    ]
+# List directory toolchain overrides
+export extern "rustup override list" [
+    --help(-h) # Print help
+]
 
+# Set the override toolchain for a directory
+export extern "rustup override set" [
+    --path     # Path to the directory
+    --help(-h) # Print help
+]
 
-    export extern "rustup toolchain uninstall" [
-        command?: string@"nu-complete rustup toolchain list"
-    ]
+# Remove the override toolchain for a directory
+export extern "rustup override unset" [
+    --path        # Path to the directory
+    --nonexistent # Remove override toolchain for all nonexistent directories
+    --help(-h)    # Print help
+]
 
-    export extern "rustup target" [
-        command?: string@"nu-complete rustup target"
-        --help(-h)        # Print help information
-    ]
+# Print this message or the help of the given subcommand(s)
+export extern "rustup override help" []
 
-    export extern "rustup target add" [
-        command?: string@"nu-complete rustup target list"
-        --toolchain       # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
-        --help(-h)        # Print help information
-    ]
+# Run a command with an environment configured for a given toolchain
+export extern "rustup run" [
+    --install  # Install the requested toolchain if needed
+    --help(-h) # Print help
+]
 
-    export extern "rustup target remove" [
-        command?: string@"nu-complete rustup target list --installed"
-    ]
+# Display which binary will be run for a given command
+export extern "rustup which" [
+    --toolchain # Toolchain name, such as 'stable', 'nightly', '1.8.0', or a custom toolchain name. For more information see `rustup help toolchain`
+    --help(-h)  # Print help
+]
 
-    export extern "rustup component" [
-        command?: string@"nu-complete rustup component"
-        --help(-h)        # Print help information
-    ]
+# Open the documentation for the current toolchain
+export extern "rustup doc" [
+    --toolchain       # Toolchain name, such as 'stable'nightly', or '1.8.0'. For more information see `rustup help toolchain`
+    --path            # Only print the path to the documentation
+    --alloc           # The Rust core allocation and collections library
+    --book            # The Rust Programming Language book
+    --cargo           # The Cargo Book
+    --clippy          # The Clippy Documentation
+    --core            # The Rust Core Library
+    --edition-guide   # The Rust Edition Guide
+    --embedded-book   # The Embedded Rust Book
+    --error-codes     # The Rust Error Codes Index
+    --nomicon         # The Dark Arts of Advanced and Unsafe Rust Programming
+    --proc_macro      # A support library for macro authors when defining new macros
+    --reference       # The Rust Reference
+    --releases        # Rust Release Notes
+    --rust-by-example # A collection of runnable examples that illustrate various Rust concepts and standard libraries
+    --rustc           # The compiler for the Rust programming language
+    --rustc-docs      # The API documentation for the Rust compiler and other toolchain components
+    --rustdoc         # Documentation generator for Rust projects
+    --std             # Standard library API documentation
+    --style-guide     # The Rust Style Guide
+    --test            # Support code for rustc's built in unit-test and micro-benchmarking framework
+    --unstable-book   # The Unstable Book
+    --help(-h)        # Print help
+]
 
-    export extern "rustup component add" [
-        command?: string@"nu-complete rustup component list"
-        --toolchain       # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
-        --target          # <target> TODO: explain this command a bit further
-        --help(-h)        # Print help information
-    ]
+# Modify the rustup installation
+export extern "rustup self" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup component remove" [
-        command?: string@"nu-complete rustup component list installed"
-        --toolchain       # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
-        --target          # <target> TODO: explain this command a bit further
-        --help(-h)        # Print help information
-    ]
+# Download and install updates to rustup
+export extern "rustup self update" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup override" [
-        command?: string@"nu-complete rustup override"
-        --help(-h)        # Print help information
-    ]
+# Uninstall rustup
+export extern "rustup self uninstall" [
+    -y               # Disable confirmation prompt
+    --no-modify-path # Do not clean up the `PATH` environment variable
+    --help(-h)       # Print help
+]
 
-    export extern "rustup override set" [
-        command?: string@"nu-complete rustup override list"
-        --path            # Path to the directory
-        --help(-h)        # Print help information
-    ]
+# Upgrade the internal data format
+export extern "rustup self upgrade-data" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup override unset" [
-        command?: string@"nu-complete rustup override list installed"
-        --path            # Path to the directory
-        --nonexistent     # Remove override toolchain for all nonexistent directories
-        --help(-h)        # Print help information
-    ]
+# Print this message or the help of the given subcommand(s)
+export extern "rustup self help" []
 
-    export extern "rustup run" [
-        command?: string@"nu-complete rustup toolchain list"
-    ]
+# Alter rustup settings
+export extern "rustup set" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup self" [
-        command?: string@"nu-complete rustup self"
-    ]
+# The triple used to identify toolchains when not specified
+export extern "rustup set default-host" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup set" [
-        command?: string@"nu-complete rustup set"
-        --help(-h)        # Print help information
-    ]
+# The default components installed with a toolchain
+export extern "rustup set profile" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup set profile" [
-        command?: string@"nu-complete rustup set profile"
-        --help(-h)        # Print help information
-    ]
+# The rustup auto self update mode
+export extern "rustup set auto-self-update" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup set auto-self-update" [
-        command?: string@"nu-complete rustup set auto-self-update"
-        --help(-h)        # Print help information
-    ]
+# The auto toolchain install mode
+export extern "rustup set auto-install" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup completions" [
-        command?: string@"nu-complete rustup completions"
-        --help(-h)        # Print help information
-    ]
+# Print this message or the help of the given subcommand(s)
+export extern "rustup set help" []
 
-    export extern "rustup completions rustup" [
-        command?: string@"nu-complete rustup completions shell"
-        --help(-h)        # Print help information
-    ]
+# Generate tab-completion scripts for your shell
+export extern "rustup completions" [
+    --help(-h) # Print help
+]
 
-    export extern "rustup completions cargo" [
-        command?: string@"nu-complete rustup completions shell"
-        --help(-h)        # Print help information
-    ]
-}
+# Print this message or the help of the given subcommand(s)
+export extern "rustup help" []
 
 export use completions *

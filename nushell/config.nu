@@ -74,6 +74,7 @@ $env.config.completions.external.completer = $external_completer
 source ./starship-init.nu
 source ./completions/cargo-completion.nu
 source ./completions/docker-completion.nu
+source ./completions/elan-completion.nu
 source ./completions/git-completion.nu
 source ./completions/helix-completion.nu
 source ./completions/just-completion.nu
@@ -93,7 +94,7 @@ def rm-history [] {
 }
 
 def update-completions [] {
-    [cargo docker git helix just make mix npm rustup ssh starship tar uv ya yazi] |
+    [cargo docker elan git helix just make mix npm rustup ssh starship tar uv ya yazi] |
         each {|program|
             print $"Updating completions script for ($program)..."
             let completion_script_path = $nu.default-config-dir |
@@ -112,8 +113,6 @@ def mix-build-release [] {
 def --wrapped opencode [...rest] {
     with-env {
         OPENCODE_ENABLE_EXA: true
-        OPENCODE_EXPERIMENTAL_LSP_TOOL: true
-        OPENCODE_DISABLE_LSP_DOWNLOAD: false
     } {
         ^opencode ...$rest
     }
