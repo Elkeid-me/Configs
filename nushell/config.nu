@@ -106,7 +106,13 @@ def update-completions [--force] {
                 ((date now) - (ls $completion_script_path | get 0.modified) > 1hr)) {
                 print $"Updating completions script for ($program)..."
                 with-env {
-                    no_proxy: $"($env.no_proxy),cdn.jsdelivr.net"
+                    no_proxy: (
+                        if $env has no_proxy {
+                            $"($env.no_proxy),cdn.jsdelivr.net"
+                        } else {
+                            "cdn.jsdelivr.net"
+                        }
+                    )
                 } {
                     http get $completion_script_url | save --force $completion_script_path
                 }
