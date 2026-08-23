@@ -93,6 +93,7 @@ def rm-history [] {
     rm $nu.history-path
 }
 
+# 更新补全脚本
 def update-completions [--force] {
     [cargo docker elan git helix just make mix npm rustup ssh starship tar uv ya yazi] |
         each {|program|

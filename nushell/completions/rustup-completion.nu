@@ -87,12 +87,12 @@ export extern "rustup show active-toolchain" [
 
 # Display the computed value of RUSTUP_HOME
 export extern "rustup show home" [
-    --help(-h)    # Print help
+    --help(-h) # Print help
 ]
 
 # Show the default profile used for the `rustup install` command
 export extern "rustup show profile" [
-    --help(-h)    # Print help
+    --help(-h) # Print help
 ]
 
 # Print this message or the help of the given subcommand(s)
@@ -145,17 +145,22 @@ export extern "rustup component" [
     --help(-h) # Print help
 ]
 
+# List installed and available components
 export extern "rustup component list" [
     --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
     --installed # List only installed components
     --quiet(-q) # Force the output to be a single column
     --help(-h)  # Print help
 ]
+
+# Add a component to a Rust toolchain
 export extern "rustup component add" [
     --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
     --target    # target
     --help(-h)  # Print help
 ]
+
+# Remove a component from a Rust toolchain
 export extern "rustup component remove" [
     --toolchain # Toolchain name, such as 'stable', 'nightly', or '1.8.0'. For more information see `rustup help toolchain`
     --target    # target
