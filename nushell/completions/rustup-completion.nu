@@ -66,7 +66,9 @@ export extern "rustup toolchain link" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup toolchain help" []
+export extern "rustup toolchain help" [
+    subcommand: string@["list" "install" "uninstall" "link"]
+]
 
 # Set the default toolchain
 export extern "rustup default" [
@@ -138,7 +140,9 @@ export extern "rustup target remove" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup target help" []
+export extern "rustup target help" [
+    subcommand: string@["list" "add" "remove"]
+]
 
 # Modify a toolchain's installed components
 export extern "rustup component" [
@@ -168,7 +172,9 @@ export extern "rustup component remove" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup component help" []
+export extern "rustup component help" [
+    subcommand: string@["list" "add" "remove"]
+]
 
 # Modify toolchain overrides for directories
 export extern "rustup override" [
@@ -194,7 +200,9 @@ export extern "rustup override unset" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup override help" []
+export extern "rustup override help" [
+    subcommand: string@["list" "set" "unset"]
+]
 
 # Run a command with an environment configured for a given toolchain
 export extern "rustup run" [
@@ -258,7 +266,9 @@ export extern "rustup self upgrade-data" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup self help" []
+export extern "rustup self help" [
+    subcommand: string@["update" "uninstall" "upgrade-data"]
+]
 
 # Alter rustup settings
 export extern "rustup set" [
@@ -286,7 +296,11 @@ export extern "rustup set auto-install" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup set help" []
+export extern "rustup set help" [
+    subcommand: string@[
+        "default-host" "profile" "auto-self-update" "auto-install"
+    ]
+]
 
 # Generate tab-completion scripts for your shell
 export extern "rustup completions" [
@@ -294,6 +308,12 @@ export extern "rustup completions" [
 ]
 
 # Print this message or the help of the given subcommand(s)
-export extern "rustup help" []
+export extern "rustup help" [
+    subcommand: string@[
+        "install" "uninstall" "dump-testament" "toolchain"
+        "default" "show" "update" "check" "target" "component"
+        "override" "run" "which" "doc" "self" "set" "completions"
+    ]
+]
 
 export use completions *

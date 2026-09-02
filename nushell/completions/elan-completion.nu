@@ -7,10 +7,6 @@ module completions {
         elan toolchain list | lines | where $in != "no installed toolchains"
     }
 
-    def "elan-complete elan completions shell" [] {
-        ["zsh" "bash" "fish" "powershell" "elvish"]
-    }
-
     export extern "elan" [
         --verbose(-v) # Enable verbose output
         --help(-h)    # Prints help information
@@ -76,7 +72,9 @@ module completions {
     ]
 
     # Prints this message or the help of the given subcommand(s)
-    export extern "elan toolchain help" []
+    export extern "elan toolchain help" [
+        subcommand: string@["list" "install" "uninstall" "link" "gc"]
+    ]
 
     # Modify directory toolchain overrides
     export extern "elan override" [
@@ -102,7 +100,9 @@ module completions {
     ]
 
     # Prints version information
-    export extern "elan override help" []
+    export extern "elan override help" [
+        subcommand: string@["list" "set" "unset"]
+    ]
 
     # Run a command with an environment configured for a given toolchain
     export extern "elan run" [
@@ -134,15 +134,23 @@ module completions {
     ]
 
     # Prints this message or the help of the given subcommand(s)
-    export extern "elan self help" []
+    export extern "elan self help" [
+        subcommand: string@["update" "uninstall"]
+    ]
 
     # Generate completion scripts for your shell
     export extern "elan completions" [
-        --help(-h)    # Prints help information
+        --help(-h)
+        shell: string@["zsh" "bash" "fish" "powershell" "elvish"]
     ]
 
     # Prints this message or the help of the given subcommand(s)
-    export extern "elan help" []
+    export extern "elan help" [
+        subcommand: string@[
+            "show" "install" "uninstall" "default" "toolchain" "override"
+            "run" "which" "self" "completions"
+        ]
+    ]
 }
 
 export use completions *

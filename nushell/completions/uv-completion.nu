@@ -475,7 +475,9 @@ module completions {
     --no-active               # Prefer project's virtual environment over an active environment
     --no-sync                 # Avoid syncing the virtual environment [env: UV_NO_SYNC=]
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Run without updating the `uv.lock` file [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --script(-s)              # Run the given path as a Python script
     --gui-script              # Run the given path as a Python GUI script
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
@@ -697,7 +699,9 @@ module completions {
     --extra: string           # Extras to enable for the dependency
     --no-sync                 # Avoid syncing the virtual environment [env: UV_NO_SYNC=]
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Add dependencies without re-locking the project [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --active                  # Prefer the active virtual environment over the project's virtual environment
     --no-active               # Prefer project's virtual environment over an active environment
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
@@ -833,7 +837,9 @@ module completions {
     --active                  # Prefer the active virtual environment over the project's virtual environment
     --no-active               # Prefer project's virtual environment over an active environment
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Remove dependencies without re-locking the project [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -966,7 +972,9 @@ module completions {
     --active                  # Prefer the active virtual environment over the project's virtual environment
     --no-active               # Prefer project's virtual environment over an active environment
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Update the version without re-locking the project [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -1119,7 +1127,9 @@ module completions {
     --no-install-package: string # Do not install the given package(s)
     --only-install-package: string # Only install the given package(s)
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Sync without updating the `uv.lock` file [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --dry-run                 # Perform a dry run, without writing the lockfile or modifying the project environment
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
@@ -1242,7 +1252,10 @@ module completions {
   export extern "uv lock" [
     --check                   # Check if the lockfile is up-to-date
     --locked                  # Check if the lockfile is up-to-date [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --check-exists            # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
+    --frozen                  # Equivalent to `--check-exists`
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --dry-run                 # Perform a dry run, without writing the lockfile
     --script: path            # Lock the specified Python script, rather than the current project
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
@@ -1445,7 +1458,9 @@ module completions {
     --no-emit-package: string # Do not emit the given package(s)
     --only-emit-package: string # Only emit the given package(s)
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Do not update the `uv.lock` before exporting [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -1581,7 +1596,9 @@ module completions {
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Display the requirements without locking the project [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --no-build                # Don't build source distributions
     --build
     --no-build-package: string # Don't build source distributions for a specific package [env: `UV_NO_BUILD_PACKAGE`=]
@@ -1761,7 +1778,9 @@ module completions {
     --only-group: string      # Only include dependencies from the specified dependency group
     --all-groups              # Include dependencies from all dependency groups
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Sync without updating the `uv.lock` file [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --no-sync                 # Avoid syncing the virtual environment [env: UV_NO_SYNC=]
     --no-install-project      # Do not install the current project [env: UV_NO_INSTALL_PROJECT=]
     --isolated                # Run checks without mutating project state [env: UV_ISOLATED=]
@@ -1900,7 +1919,9 @@ module completions {
     --only-group: string      # Only audit dependencies from the specified dependency group
     --only-dev                # Only audit the development dependency group
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Audit the requirements without locking the project [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --output-format: string@"nu-complete uv audit output_format" # Select the output format
     --ignore: string          # Ignore a vulnerability by ID
     --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
@@ -4634,7 +4655,9 @@ module completions {
   export extern "uv workspace metadata" [
     --script: path            # View metadata for the specified PEP 723 Python script, rather than the current workspace
     --locked                  # Check if the lockfile is up-to-date [env: UV_LOCKED=]
+    --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
+    --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
     --dry-run                 # Perform a dry run, without writing the lockfile
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
