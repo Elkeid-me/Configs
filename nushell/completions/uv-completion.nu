@@ -1328,6 +1328,14 @@ module completions {
     --help(-h)                # Display the concise help for this command
   ]
 
+  def "nu-complete uv upgrade index_strategy" [] {
+    [ "first-index" "unsafe-first-match" "unsafe-best-match" ]
+  }
+
+  def "nu-complete uv upgrade keyring_provider" [] {
+    [ "disabled" "subprocess" ]
+  }
+
   def "nu-complete uv upgrade python_preference" [] {
     [ "only-managed" "managed" "system" "only-system" ]
   }
@@ -1343,6 +1351,14 @@ module completions {
   # Upgrade a dependency in the project
   export extern "uv upgrade" [
     --exclude: string         # Exclude the named package from upgrades
+    --index: string           # The indexes to use when resolving dependencies, in addition to the default index
+    --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
+    --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
+    --extra-index-url: string # (Deprecated: use `--index` instead) Extra URLs of package indexes to use, in addition to `--index-url`
+    --find-links(-f): string  # Locations to search for candidate distributions, in addition to those found in the registry indexes
+    --no-index                # Ignore the registry index (e.g., PyPI), instead relying on direct URL dependencies and those provided via `--find-links`
+    --index-strategy: string@"nu-complete uv upgrade index_strategy" # The strategy to use when resolving against multiple index URLs
+    --keyring-provider: string@"nu-complete uv upgrade keyring_provider" # Attempt to use `keyring` for authentication for index URLs
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv upgrade python_preference"
@@ -1449,6 +1465,7 @@ module completions {
     --hashes                  # Include hashes for all dependencies
     --no-hashes               # Omit hashes in the generated output
     --output-file(-o): path   # Write the exported requirements to the given file
+    --batch: path             # Export multiple selections from a TOML manifest containing `[[export]]` entries
     --no-emit-project         # Do not emit the current project
     --only-emit-project       # Only emit the current project
     --no-emit-workspace       # Do not emit any workspace members, including the root project
