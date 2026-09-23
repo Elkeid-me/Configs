@@ -23,20 +23,24 @@ $env.config.color_config = {shape_external: red_bold,
                             shape_externalarg: white}
 $env.config.cursor_shape = {emacs: line}
 
-let pnpm_completer = if $kernel_name == Windows_NT {
+let pnpm_completer = if (uname | get kernel-name) == Windows_NT {
     let pnpm_path = which ^pnpm.ps1
-    if ($pnpm_path | is-empty) {
+    let possible_pnpm_exe_path = ($env.APPDATA)/npm/node_modules/pnpm/pnpm.exe
+    if ($possible_pnpm_exe_path | path exists) {
+        {|commandline: list<string>|
+            ^$possible_pnpm_exe_path completion-server -- ...$commandline | lines
+        }
+    } else if ($pnpm_path | is-empty) {
         {|_|}
     } else {
         let pnpm_path = $pnpm_path | get 0.path
-        {|commandline: string|
-            (pwsh -NoLogo -NoProfile -File $pnpm_path
-                completion-server -- $commandline | lines)
+        {|commandline: list<string>|
+            pwsh -NoLogo -NoProfile -File $pnpm_path completion-server -- ...$commandline | lines
         }
     }
 } else {
-    {|commandline: string|
-        pnpm completion-server -- $commandline | lines
+    {|commandline: list<string>|
+        pnpm completion-server -- ...$commandline | lines
     }
 }
 
@@ -59,12 +63,12 @@ let external_completer = {|spans: list<string>|
             let commandline = $spans | str join " "
             let cursor = $commandline | str length
             with-env {
-                SHELL: bash
+                SHELL: pwsh
                 COMP_CWORD: ($spans | length)
                 COMP_LINE: $commandline
                 COMP_POINT: $cursor
             } {
-                do $pnpm_completer $commandline
+                do $pnpm_completer $spans
             }
         }
     }

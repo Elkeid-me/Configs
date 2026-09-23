@@ -3578,6 +3578,10 @@ module completions {
     [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "s390x-unknown-linux-gnu" "powerpc64le-unknown-linux-gnu" "loongarch64-unknown-linux-gnu" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "s390x-manylinux2014" "s390x-manylinux_2_17" "s390x-manylinux_2_28" "s390x-manylinux_2_31" "s390x-manylinux_2_32" "s390x-manylinux_2_33" "s390x-manylinux_2_34" "s390x-manylinux_2_35" "s390x-manylinux_2_36" "s390x-manylinux_2_37" "s390x-manylinux_2_38" "s390x-manylinux_2_39" "s390x-manylinux_2_40" "ppc64le-manylinux2014" "ppc64le-manylinux_2_17" "ppc64le-manylinux_2_28" "ppc64le-manylinux_2_31" "ppc64le-manylinux_2_32" "ppc64le-manylinux_2_33" "ppc64le-manylinux_2_34" "ppc64le-manylinux_2_35" "ppc64le-manylinux_2_36" "ppc64le-manylinux_2_37" "ppc64le-manylinux_2_38" "ppc64le-manylinux_2_39" "ppc64le-manylinux_2_40" "loongarch64-manylinux_2_36" "loongarch64-manylinux_2_37" "loongarch64-manylinux_2_38" "loongarch64-manylinux_2_39" "loongarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
   }
 
+  def "nu-complete uv pip sync output_format" [] {
+    [ "text" "json" ]
+  }
+
   def "nu-complete uv pip sync torch_backend" [] {
     [ "auto" "cpu" "cu132" "cu130" "cu129" "cu128" "cu126" "cu125" "cu124" "cu123" "cu122" "cu121" "cu120" "cu118" "cu117" "cu116" "cu115" "cu114" "cu113" "cu112" "cu111" "cu110" "cu102" "cu101" "cu100" "cu92" "cu91" "cu90" "cu80" "rocm7.2" "rocm7.1" "rocm7.0" "rocm6.4" "rocm6.3" "rocm6.2.4" "rocm6.2" "rocm6.1" "rocm6.0" "rocm5.7" "rocm5.6" "rocm5.5" "rocm5.4.2" "rocm5.4" "rocm5.3" "rocm5.2" "rocm5.1.1" "rocm4.2" "rocm4.1" "rocm4.0.1" "xpu" ]
   }
@@ -3649,6 +3653,8 @@ module completions {
     --strict                  # Validate the Python environment after completing the installation, to detect packages with missing dependencies or other issues
     --no-strict
     --dry-run                 # Perform a dry run, i.e., don't actually install anything but resolve the dependencies and print the resulting plan
+    --check                   # Check whether the environment matches the requirements without modifying it
+    --output-format: string@"nu-complete uv pip sync output_format" # Select the output format
     --torch-backend: string@"nu-complete uv pip sync torch_backend" # The backend to use when fetching packages in the PyTorch ecosystem (e.g., `cpu`, `cu126`, or `auto`)
     --ask(-a)
     --python-executable: string
@@ -3717,6 +3723,10 @@ module completions {
 
   def "nu-complete uv pip install python_platform" [] {
     [ "windows" "linux" "macos" "x86_64-pc-windows-msvc" "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "x86_64-unknown-linux-gnu" "aarch64-apple-darwin" "x86_64-apple-darwin" "aarch64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "s390x-unknown-linux-gnu" "powerpc64le-unknown-linux-gnu" "loongarch64-unknown-linux-gnu" "riscv64-unknown-linux" "x86_64-manylinux2014" "x86_64-manylinux_2_17" "x86_64-manylinux_2_28" "x86_64-manylinux_2_31" "x86_64-manylinux_2_32" "x86_64-manylinux_2_33" "x86_64-manylinux_2_34" "x86_64-manylinux_2_35" "x86_64-manylinux_2_36" "x86_64-manylinux_2_37" "x86_64-manylinux_2_38" "x86_64-manylinux_2_39" "x86_64-manylinux_2_40" "aarch64-manylinux2014" "aarch64-manylinux_2_17" "aarch64-manylinux_2_28" "aarch64-manylinux_2_31" "aarch64-manylinux_2_32" "aarch64-manylinux_2_33" "aarch64-manylinux_2_34" "aarch64-manylinux_2_35" "aarch64-manylinux_2_36" "aarch64-manylinux_2_37" "aarch64-manylinux_2_38" "aarch64-manylinux_2_39" "aarch64-manylinux_2_40" "s390x-manylinux2014" "s390x-manylinux_2_17" "s390x-manylinux_2_28" "s390x-manylinux_2_31" "s390x-manylinux_2_32" "s390x-manylinux_2_33" "s390x-manylinux_2_34" "s390x-manylinux_2_35" "s390x-manylinux_2_36" "s390x-manylinux_2_37" "s390x-manylinux_2_38" "s390x-manylinux_2_39" "s390x-manylinux_2_40" "ppc64le-manylinux2014" "ppc64le-manylinux_2_17" "ppc64le-manylinux_2_28" "ppc64le-manylinux_2_31" "ppc64le-manylinux_2_32" "ppc64le-manylinux_2_33" "ppc64le-manylinux_2_34" "ppc64le-manylinux_2_35" "ppc64le-manylinux_2_36" "ppc64le-manylinux_2_37" "ppc64le-manylinux_2_38" "ppc64le-manylinux_2_39" "ppc64le-manylinux_2_40" "loongarch64-manylinux_2_36" "loongarch64-manylinux_2_37" "loongarch64-manylinux_2_38" "loongarch64-manylinux_2_39" "loongarch64-manylinux_2_40" "aarch64-linux-android" "x86_64-linux-android" "wasm32-pyodide2024" "wasm32-pyodide2025" "arm64-apple-ios" "arm64-apple-ios-simulator" "x86_64-apple-ios-simulator" ]
+  }
+
+  def "nu-complete uv pip install output_format" [] {
+    [ "text" "json" ]
   }
 
   def "nu-complete uv pip install torch_backend" [] {
@@ -3808,6 +3818,8 @@ module completions {
     --strict                  # Validate the Python environment after completing the installation, to detect packages with missing dependencies or other issues
     --no-strict
     --dry-run                 # Perform a dry run, i.e., don't actually install anything but resolve the dependencies and print the resulting plan
+    --check                   # Check whether the environment satisfies the requirements without modifying it
+    --output-format: string@"nu-complete uv pip install output_format" # Select the output format
     --torch-backend: string@"nu-complete uv pip install torch_backend" # The backend to use when fetching packages in the PyTorch ecosystem (e.g., `cpu`, `cu126`, or `auto`)
     --disable-pip-version-check
     --user
@@ -4430,6 +4442,7 @@ module completions {
 
   # Build Python packages into source distributions and wheels
   export extern "uv build" [
+    --skip-dependency-check   # Skip checking if build dependencies are satisfied when building without isolation
     --package: string         # Build a specific package in the workspace
     --all-packages            # Builds all packages in the workspace
     --out-dir(-o): path       # The output directory to which distributions should be written
@@ -4675,7 +4688,6 @@ module completions {
     --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Assert that a `uv.lock` exists without checking if it is up-to-date [env: UV_FROZEN=]
     --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
-    --dry-run                 # Perform a dry run, without writing the lockfile
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)

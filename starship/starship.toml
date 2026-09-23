@@ -1,4 +1,4 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 
 add_newline = false
 
@@ -22,12 +22,12 @@ style = "#F4B8E4"
 read_only = " \U000f033e"
 
 [elixir]
-format = '[$symbol]($style) '
+format = "[$symbol]($style) "
 style = "#9575CD"
 symbol = "\ue62d "
 
 [git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style) '
+format = "[$symbol$branch(:$remote_branch)]($style) "
 symbol = "\ue725 "
 style = "#BABBF1"
 
@@ -44,20 +44,21 @@ revert = "\ue728 "
 cherry_pick = "\ue29b "
 
 [hostname]
-format = '[$ssh_symbol$hostname]($style) '
+format = "[$ssh_symbol$hostname]($style) "
 ssh_only = false
 style = "#8CAAEE"
+ssh_symbol = "\U0001f310"
 
 [nodejs]
-format = '[$symbol($version )]($style)'
+format = "[$symbol($version )]($style)"
 
 [python]
 format = '[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)'
-style = 'green bold'
+style = "green bold"
 symbol = "\ue235 "
-version_format = '${raw}'
+version_format = "${raw}"
 
 [username]
-format = '[$user]($style)'
+format = "[$user]($style)"
 show_always = true
 style_user = "#8CAAEE"

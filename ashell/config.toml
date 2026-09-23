@@ -11,9 +11,9 @@ enabled = true
 opacity = 0.75
 
 [modules]
-left = [ "Workspaces" ]
-center = [ "WindowTitle" ]
-right = [ "Notifications", "Tray", "Tempo", "Settings" ]
+left = ["Workspaces"]
+center = ["WindowTitle"]
+right = ["Notifications", "Tray", "Tempo", "Settings"]
 
 [tempo]
 clock_format = "%Y/%m/%d  %R"
