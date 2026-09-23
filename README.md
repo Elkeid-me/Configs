@@ -20,8 +20,6 @@
 
   配置了 `mix` 的 Wrapper 脚本，简化 Elixir 程序的 Release 编译。
 
-  配置了 OpenCode 的 Wrapper 脚本，默认启用 WebSearch 和语言服务器支持，但关闭语言服务器的自动安装。
-
 `Nushell/completions` 下除 `elan`、`rustup`、`helix`、`just`、`uv`、 `starship`、`ya` 和 `yazi` 的补全外，均来自 [nushell/nu_scripts](https://github.com/nushell/nu_scripts)。
 
 Feel free to use.

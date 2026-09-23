@@ -130,14 +130,6 @@ def mix-build-release [] {
     }
 }
 
-def --wrapped opencode [...rest] {
-    with-env {
-        OPENCODE_ENABLE_EXA: true
-    } {
-        ^opencode ...$rest
-    }
-}
-
 def tlmgr-install [filename: string] {
     let query = ^tlmgr search --json --global --file $filename | lines |
         where {|item| $item !~ 'tlmgr\.pl: package repository .*' } |
