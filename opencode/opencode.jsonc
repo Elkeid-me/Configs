@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // "shell": "bash", // for Linux and MacOS
+  // "shell": "pwsh", // for Windows, PowerShell 7
+  "permissions": [
+    {
+      "action": "shell",
+      "resource": "*",
+      "effect": "ask"
+    }
+  ]
+}

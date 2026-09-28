@@ -1,0 +1,43 @@
+symbolPreset: nerd
+setupVersion: 2
+statusLine:
+  preset: ascii
+dev:
+  autoqa: false
+browser:
+  enabled: false
+debug:
+  enabled: false
+tools:
+  approvalMode: write
+lsp:
+  enabled: false
+providers:
+  webSearchOrder:
+    - exa
+    - perplexity
+hideThinkingBlock: true
+recap:
+  enabled: false
+magicKeywords:
+  enabled: false
+  jevify: false
+  workflow: false
+  ultrathink: false
+  orchestrate: false
+provider:
+  appendOnlyContext: "on"
+compaction:
+  midTurnEnabled: false
+  supersedeReads: false
+  dropUseless: false
+inlineToolDescriptors: "off"
+includeModelInPrompt: false
+eval:
+  autoProvision: false
+  tools:
+    enabled: false
+  py: false
+  js: false
+composer:
+  shape: box

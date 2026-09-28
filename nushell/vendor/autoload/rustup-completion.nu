@@ -315,5 +315,3 @@ export extern "rustup help" [
         "override" "run" "which" "doc" "self" "set" "completions"
     ]
 ]
-
-export use completions *
