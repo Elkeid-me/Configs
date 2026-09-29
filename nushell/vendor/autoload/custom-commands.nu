@@ -21,7 +21,7 @@ def update-completions [--force] {
             }
             let path_exists = $completion_script_path | path exists
             let up_to_date = if $path_exists {
-                (date now) - (ls $completion_script_path | get 0.modified) > 1hr
+                (date now) - (ls $completion_script_path | get 0.modified) < 1day
             } else {
                 false
             }
