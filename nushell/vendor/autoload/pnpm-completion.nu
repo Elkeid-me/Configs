@@ -1,17 +1,17 @@
 module completions {
 
-    def pnpm-complete [|token: record, place: record, buffer: string] {
+    def "nu-complete pnpm" [token: record, place: record, buffer: string] {
         with-env {
             SHELL: pwsh
             COMP_LINE: $buffer
-            COMP_POINT: ($buffer | str length)
+            COMP_POINT: $place.cursor
         } {
             pnpm completion-server -- ...$place.command | lines
         }
     }
 
     export extern pnpm [
-        ...args: string@pnpm-complete
+        ...args: string@"nu-complete pnpm"
     ]
 
 }
