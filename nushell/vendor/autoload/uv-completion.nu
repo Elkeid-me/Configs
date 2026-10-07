@@ -1932,13 +1932,14 @@ module completions {
     --no-extra: string        # Don't audit the specified optional dependencies
     --no-dev                  # Don't audit the development dependency group [env: UV_NO_DEV=]
     --no-group: string        # Don't audit the specified dependency group [env: `UV_NO_GROUP`=]
-    --no-default-groups       # Don't audit the default dependency groups
+    --no-default-groups       # Don't audit dependency groups unless explicitly requested
     --only-group: string      # Only audit dependencies from the specified dependency group
     --only-dev                # Only audit the development dependency group
     --locked                  # Assert that the `uv.lock` will remain unchanged [env: UV_LOCKED=]
     --no-locked               # Disable locked mode, overriding `UV_LOCKED`
     --frozen                  # Audit the requirements without locking the project [env: UV_FROZEN=]
     --no-frozen               # Disable frozen mode, overriding `UV_FROZEN`
+    --offline
     --output-format: string@"nu-complete uv audit output_format" # Select the output format
     --ignore: string          # Ignore a vulnerability by ID
     --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
@@ -1996,7 +1997,6 @@ module completions {
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
-    --offline                 # Disable network access [env: UV_OFFLINE=]
     --no-offline
     --allow-insecure-host: string # Allow insecure connections to a host
     --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
@@ -2670,6 +2670,7 @@ module completions {
   # Audit installed tools and their dependencies
   export extern "uv tool audit" [
     --all                     # Audit all installed tools
+    --offline
     --output-format: string@"nu-complete uv tool audit output_format" # Select the output format
     --ignore: string          # Ignore a vulnerability by ID
     --ignore-until-fixed: string # Ignore a vulnerability by ID, but only while no fix is available
@@ -2691,7 +2692,6 @@ module completions {
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
-    --offline                 # Disable network access [env: UV_OFFLINE=]
     --no-offline
     --allow-insecure-host: string # Allow insecure connections to a host
     --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
@@ -4553,6 +4553,7 @@ module completions {
 
   # Upload distributions to an index
   export extern "uv publish" [
+    --offline
     --index: string           # The name of an index in the configuration to use for publishing.
     --username(-u): string    # The username for the upload
     --password(-p): string    # The password for the upload
@@ -4580,7 +4581,6 @@ module completions {
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
     --no-system-certs
-    --offline                 # Disable network access [env: UV_OFFLINE=]
     --no-offline
     --allow-insecure-host: string # Allow insecure connections to a host
     --preview                 # Whether to enable all experimental preview features [env: UV_PREVIEW=]
