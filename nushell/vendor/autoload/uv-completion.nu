@@ -21,7 +21,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -69,7 +69,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -116,7 +116,7 @@ module completions {
     --username(-u): string    # The username to use for the service
     --password: string        # The password to use for the service
     --token(-t): string       # The token to use for the service
-    --keyring-provider: string@"nu-complete uv auth login keyring_provider" # The keyring provider to use for storage of credentials
+    --keyring-provider: string@"nu-complete uv auth login keyring_provider"
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv auth login python_preference"
@@ -124,7 +124,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth login python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth login python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -170,7 +170,7 @@ module completions {
   # Logout of a service
   export extern "uv auth logout" [
     --username(-u): string    # The username to logout
-    --keyring-provider: string@"nu-complete uv auth logout keyring_provider" # The keyring provider to use for storage of credentials
+    --keyring-provider: string@"nu-complete uv auth logout keyring_provider"
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv auth logout python_preference"
@@ -178,7 +178,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth logout python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth logout python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -224,7 +224,7 @@ module completions {
   # Show the authentication token for a service
   export extern "uv auth token" [
     --username(-u): string    # The username to lookup
-    --keyring-provider: string@"nu-complete uv auth token keyring_provider" # The keyring provider to use for reading credentials
+    --keyring-provider: string@"nu-complete uv auth token keyring_provider"
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv auth token python_preference"
@@ -232,7 +232,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth token python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth token python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -280,7 +280,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth dir python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth dir python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -332,7 +332,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth helper python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth helper python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -379,7 +379,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv auth helper get python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv auth helper get python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -535,7 +535,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv run python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv run python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -612,7 +612,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv init python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv init python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -765,7 +765,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv add python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv add python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -891,7 +891,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv remove python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv remove python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1025,7 +1025,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv version python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv version python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1186,7 +1186,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv sync python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv sync python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1302,7 +1302,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv lock python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv lock python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1366,7 +1366,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv upgrade python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv upgrade python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1523,7 +1523,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv export python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv export python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1660,7 +1660,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tree python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tree python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1713,7 +1713,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv format python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv format python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1854,7 +1854,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv check python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv check python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -1988,7 +1988,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv audit python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv audit python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2034,7 +2034,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2174,7 +2174,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool run python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool run python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2314,7 +2314,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool uvx python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool uvx python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2448,7 +2448,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool install python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool install python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2564,7 +2564,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool upgrade python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool upgrade python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2621,7 +2621,7 @@ module completions {
     --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
-    --python-fetch: string@"nu-complete uv tool list python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool list python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2683,7 +2683,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool audit python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool audit python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2731,7 +2731,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool uninstall python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool uninstall python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2779,7 +2779,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool update-shell python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool update-shell python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2827,7 +2827,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv tool dir python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv tool dir python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2874,7 +2874,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2933,7 +2933,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python list python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python list python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -2981,6 +2981,8 @@ module completions {
     --no-registry             # Do not register the Python installation in the Windows registry
     --mirror: string          # Set the URL to use as the source for downloading Python installations
     --pypy-mirror: string     # Set the URL to use as the source for downloading PyPy installations
+    --graalpy-mirror: string  # Set the URL to use as the source for downloading GraalPy installations
+    --pyodide-mirror: string  # Set the URL to use as the source for downloading Pyodide installations
     --python-downloads-json-url: string # URL pointing to JSON of custom Python installations
     --reinstall(-r)           # Reinstall the requested Python version, if it's already installed
     --force(-f)               # Replace existing Python executables during installation
@@ -2995,7 +2997,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python install python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python install python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3039,6 +3041,8 @@ module completions {
     --install-dir(-i): path   # The directory Python installations are stored in
     --mirror: string          # Set the URL to use as the source for downloading Python installations
     --pypy-mirror: string     # Set the URL to use as the source for downloading PyPy installations
+    --graalpy-mirror: string  # Set the URL to use as the source for downloading GraalPy installations
+    --pyodide-mirror: string  # Set the URL to use as the source for downloading Pyodide installations
     --reinstall(-r)           # Reinstall the latest Python patch, if it's already installed
     --python-downloads-json-url: string # URL pointing to JSON of custom Python installations
     --compile-bytecode        # Compile Python's standard library to bytecode after installation
@@ -3050,7 +3054,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python upgrade python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python upgrade python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3105,7 +3109,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python find python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python find python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3159,7 +3163,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python pin python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python pin python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3208,7 +3212,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python dir python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python dir python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3257,7 +3261,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python uninstall python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python uninstall python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3305,7 +3309,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv python update-shell python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv python update-shell python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3353,7 +3357,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3536,7 +3540,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip compile python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip compile python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3671,7 +3675,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip sync python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip sync python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3831,7 +3835,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip install python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip install python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3896,7 +3900,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip uninstall python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip uninstall python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -3956,7 +3960,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip freeze python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip freeze python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4040,7 +4044,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip list python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip list python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4097,7 +4101,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip show python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip show python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4178,7 +4182,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip tree python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip tree python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4235,7 +4239,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip check python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip check python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4287,7 +4291,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv pip debug python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv pip debug python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4377,7 +4381,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv venv python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv venv python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4504,7 +4508,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4572,7 +4576,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv publish python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv publish python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4619,7 +4623,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv workspace python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv workspace python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4735,7 +4739,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv workspace metadata python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv workspace metadata python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4783,7 +4787,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv workspace dir python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv workspace dir python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4832,7 +4836,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv workspace list python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv workspace list python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4879,7 +4883,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4926,7 +4930,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend build-sdist python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend build-sdist python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -4975,7 +4979,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend build-wheel python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend build-wheel python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5024,7 +5028,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend build-editable python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend build-editable python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5072,7 +5076,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-sdist python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-sdist python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5119,7 +5123,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-wheel python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-wheel python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5166,7 +5170,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend prepare-metadata-for-build-wheel python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend prepare-metadata-for-build-wheel python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5214,7 +5218,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-editable python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend get-requires-for-build-editable python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5261,7 +5265,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv build-backend prepare-metadata-for-build-editable python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv build-backend prepare-metadata-for-build-editable python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5309,7 +5313,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv cache python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv cache python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5357,7 +5361,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv cache clean python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv cache clean python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5407,7 +5411,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv cache prune python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv cache prune python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5454,7 +5458,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv cache dir python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv cache dir python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5507,7 +5511,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv cache size python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv cache size python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5554,7 +5558,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv self python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv self python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5603,7 +5607,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv self update python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv self update python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5657,7 +5661,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv self version python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv self version python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5705,7 +5709,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv clean python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv clean python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
@@ -5767,7 +5771,7 @@ module completions {
     --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
-    --python-fetch: string@"nu-complete uv generate-shell-completion python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv generate-shell-completion python_fetch" # Deprecated option for configuring automatic Python downloads
     --no-color                # Disable colors
     --no-native-tls
     --system-certs            # Whether to load TLS certificates from the platform's native certificate store [env: UV_SYSTEM_CERTS=]
@@ -5807,7 +5811,7 @@ module completions {
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
     --allow-python-downloads  # Allow automatically downloading Python when required. [env: "UV_PYTHON_DOWNLOADS=auto"]
     --no-python-downloads     # Disable automatic downloads of Python. [env: "UV_PYTHON_DOWNLOADS=never"]
-    --python-fetch: string@"nu-complete uv help python_fetch" # Deprecated version of [`Self::python_downloads`]
+    --python-fetch: string@"nu-complete uv help python_fetch" # Deprecated option for configuring automatic Python downloads
     --quiet(-q)               # Use quiet output
     --verbose(-v)             # Use verbose output
     --no-color                # Disable colors
