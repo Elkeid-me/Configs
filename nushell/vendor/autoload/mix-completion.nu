@@ -1,165 +1,203 @@
-# Starts all registered apps
-extern "mix app.start" [
-    ...args
-]
+# Configures all registered apps
+export extern "mix app.config" []
 
-# Lists all archives
-extern "mix archive" [
-    --no-compile # skip compilation
-    ...args
-]
+# Starts all registered apps
+export extern "mix app.start" []
+
+# Prints the application tree
+export extern "mix app.tree" []
+
+# Lists installed archives
+export extern "mix archive" []
 
 # Archives this project into a .ez file
-extern "mix archive.build" [
-    --no-compile # skip compilation
-    ...args
-]
+export extern "mix archive.build" []
+
+# Checks all archives are available.
+export extern "mix archive.check" []
 
 # Installs an archive locally
-extern "mix archive.install" [
-    ...args
-]
+export extern "mix archive.install" []
 
 # Uninstalls archives
-extern "mix archive.uninstall" [
-    ...args
-]
+export extern "mix archive.uninstall" []
 
 # Deletes generated application files
-extern "mix clean" [
-    --all # Clean everything, including dependencies
-    ...args
-]
+export extern "mix clean" []
 
 # Executes the given command
-extern "mix cmd" [
-    ...args
-]
+export extern "mix cmd" []
 
 # Compiles source files
-extern "mix compile" [
-    ...args
-]
+export extern "mix compile" []
+
+# Writes a .app file.
+export extern "mix compile.app" []
+
+# Compiles Elixir source files.
+export extern "mix compile.elixir" []
+
+# Compiles Erlang source files.
+export extern "mix compile.erlang" []
+
+# Compiles Leex source files.
+export extern "mix compile.leex" []
+
+# Compiles Yecc source files.
+export extern "mix compile.yecc" []
 
 # Lists dependencies and their status
-extern "mix deps" [
-    ...args
-]
+export extern "mix deps" []
 
 # Deletes the given dependencies' files
-extern "mix deps.clean" [
-    ...args
-]
+export extern "mix deps.clean" []
 
 # Compiles dependencies
-extern "mix deps.compile" [
-    ...args
-]
+export extern "mix deps.compile" []
 
-# Gets all out of date dependencies
-extern "mix deps.get" [
-    ...args
-]
+# Fetches unavailable and out of date dependencies
+export extern "mix deps.get" []
+
+# Checks, compiles, and loads dependencies.
+export extern "mix deps.loadpaths" []
+
+# Extension point for precompiling dependencies.
+export extern "mix deps.precompile" []
+
+# Prints the dependency tree
+export extern "mix deps.tree" []
 
 # Unlocks the given dependencies
-extern "mix deps.unlock" [
-    ...args
-]
+export extern "mix deps.unlock" []
 
 # Updates the given dependencies
-extern "mix deps.update" [
-    ...args
-]
+export extern "mix deps.update" []
 
-# Executes the tasks separated by comma
-extern "mix do" [
-    ...args
-]
+# Executes the tasks separated by plus
+export extern "mix do" []
+
+# Lists installed escripts
+export extern "mix escript" []
 
 # Builds an escript for the project
-extern "mix escript.build" [
-    --force      # forces compilation regardless of modification times
-    --no-compile # skips compilation to .beam files
-    ...args
-]
+export extern "mix escript.build" []
 
-# Prints help information for tasks
-extern "mix help" [
-    ...args
-]
+# Installs an escript locally
+export extern "mix escript.install" []
+
+# Uninstalls escripts
+export extern "mix escript.uninstall" []
+
+# Evaluates the given code
+export extern "mix eval" []
+
+# Formats the given files/patterns
+export extern "mix format" []
+
+# Prints help information for tasks, aliases, modules, and applications
+export extern "mix help" []
+
+# Prints Hex help information
+export extern "mix hex" []
+
+# Shows retired Hex deps and security advisories for the current project
+export extern "mix hex.audit" []
+
+# Builds a new package version locally
+export extern "mix hex.build" []
+
+# Reads, updates or deletes local Hex config
+export extern "mix hex.config" []
+
+# Fetches or opens documentation of a package
+export extern "mix hex.docs" []
+
+# Prints Hex information
+export extern "mix hex.info" []
+
+# Manages Hex.pm organizations
+export extern "mix hex.organization" []
+
+# Shows outdated Hex deps for the current project
+export extern "mix hex.outdated" []
+
+# Manages Hex package ownership
+export extern "mix hex.owner" []
+
+# Fetches, diffs, or searches packages
+export extern "mix hex.package" []
+
+# Inspects the active Hex dependency policy
+export extern "mix hex.policy" []
+
+# Publishes a new package version
+export extern "mix hex.publish" []
+
+# Manages local Hex registries
+export extern "mix hex.registry" []
+
+# Manages Hex repositories
+export extern "mix hex.repo" []
+
+# Retires a package version
+export extern "mix hex.retire" []
+
+# Open and perform documentation search
+export extern "mix hex.search" []
+
+# Show Hex packages accepting sponsorships
+export extern "mix hex.sponsor" []
+
+# Manages your Hex user account
+export extern "mix hex.user" []
 
 # Loads and persists the given configuration
-extern "mix loadconfig" [
-    ...args
-]
+export extern "mix loadconfig" []
 
-# Lists local tasks
-extern "mix local" [
-    ...args
-]
+# Loads the application and its dependencies paths.
+export extern "mix loadpaths" []
+
+# Lists tasks installed locally via archives
+export extern "mix local" []
 
 # Installs Hex locally
-extern "mix local.hex" [
-    ...args
-]
+export extern "mix local.hex" []
 
-# Manages public keys
-extern "mix local.public_keys" [
-    ...args
-]
-
-# Installs rebar locally
-extern "mix local.rebar" [
-    ...args
-]
+# Installs Rebar locally
+export extern "mix local.rebar" []
 
 # Creates a new Elixir project
-extern "mix new" [
-    --sup      # generate an OTP application skeleton with a supervision tree
-    --umbrella # can be given to generate an umbrella project
-    --app      # can be given in order to name the OTP application
-    --module   # can be given in order to name the modules in the generated code skeleton
-    ...args
-]
+export extern "mix new" []
+
+# Profiles the given file or expression with cprof
+export extern "mix profile.cprof" []
+
+# Profiles the given file or expression with eprof
+export extern "mix profile.eprof" []
 
 # Profiles the given file or expression with fprof
-extern "mix profile.fprof" [
-    ...args
-]
+export extern "mix profile.fprof" []
 
-# Runs the given file or expression
-extern "mix run" [
-    --config(-c)       # loads the given configuration file
-    --eval(-e)         # evaluates the given code
-    --require(-r)      # requires pattern before running the command
-    --parallel-require # requires pattern in parallel
-    --pr               # requires pattern in parallel
-    --no-compile       # does not compile even if files require compilation
-    --no-deps-check    # does not check dependencies
-    --no-halt          # does not halt the system after running the command
-    --no-start         # does not start applications after compilation
-    ...args
-]
+# Profiles the given file or expression with tprof
+export extern "mix profile.tprof" []
+
+# Assembles a self-contained release
+export extern "mix release" []
+
+# Generates sample files for releases
+export extern "mix release.init" []
+
+# Runs the current application
+export extern "mix run" []
+
+# Prints source location for modules and functions
+export extern "mix source" []
 
 # Runs a project's tests
-extern "mix test" [
-    --trace      # run tests with detailed reporting; automatically sets `--max-cases` to 1
-    --max-cases  # set the maximum number of cases running async
-    --cover      # the directory to include coverage results
-    --force      # forces compilation regardless of modification times
-    --no-compile # do not compile, even if files require compilation
-    --no-start   # do not start applications after compilation
-    --no-color   # disable color in the output
-    --color      # enable color in the output
-    --include    # include tests that match the filter
-    --exclude    # exclude tests that match the filter
-    --only       # run only tests that match the filter
-    --seed       # seeds the random number generator used to randomize test order
-    --timeout    # set the timeout for the tests
-    ...args
-]
+export extern "mix test" []
 
-# specify input directory
-extern "mix" [
-    ...args
-]
+# Build report from exported test coverage
+export extern "mix test.coverage" []
+
+# Prints cross reference information
+export extern "mix xref" []

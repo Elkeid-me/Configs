@@ -1,7 +1,7 @@
 module completions {
 
     def "sessions in pwd" [] {
-        ^opencode session list --format json | from json | get id
+        ^opencode session list --format json | from json | each {|x| {value: $x.id, description: $x.title} }
     }
 
     export extern "opencode" [
@@ -28,7 +28,7 @@ module completions {
         --method(-m): string@[
             "curl" "npm" "pnpm" "bun" "yarn" "vp" "brew"
         ] # Installation method to use (choices: curl, npm, pnpm, bun, yarn, vp, brew)
-        target?: string # Version to upgrade to (with or without a leading v) `(optional)`
+        target?: string # Version to upgrade to (with or without a leading v)
     ]
 
     # Upgrade OpenCode to the latest or a specific version
@@ -36,7 +36,7 @@ module completions {
         --method(-m): string@[
             "curl" "npm" "pnpm" "bun" "yarn" "vp" "brew"
         ] # Installation method to use (choices: curl, npm, pnpm, bun, yarn, vp, brew)
-        target?: string # Version to upgrade to (with or without a leading v) `(optional)`
+        target?: string # Version to upgrade to (with or without a leading v)
     ]
 
     # Start an Agent Client Protocol server
@@ -65,7 +65,7 @@ module completions {
     export extern "opencode debug paths" [
         name?: string@[
             "db" "home" "data" "config" "cache" "state" "tmp" "bin" "log" "repos"
-        ] # Print only one path: db, home, data, config, cache, state, tmp, bin, log, repos `(optional)`
+        ] # Print only one path: db, home, data, config, cache, state, tmp, bin, log, repos
     ]
 
     # Manage integrations and credentials
@@ -80,7 +80,7 @@ module completions {
 
     # connect an integration
     export extern "opencode auth login" [
-        target?: string  # Integration ID, name, or well-known provider URL `(optional)`
+        target?: string  # Integration ID, name, or well-known provider URL
         --standalone     # Run with a private server instead of the background service
         --server: string # Connect to a server URL instead of the background service
         --method: string # Authentication method ID
@@ -89,15 +89,15 @@ module completions {
 
     # log out of a saved account
     export extern "opencode auth logout" [
-        target?: string     # Integration ID or name (optional)
-        credential?: string # Credential ID or label (opens an account picker when omitted) (optional)
+        target?: string     # Integration ID or name
+        credential?: string # Credential ID or label (opens an account picker when omitted)
         --standalone        # Run with a private server instead of the background service
         --server: string    # Connect to a server URL instead of the background service
     ]
 
     # print stored credentials, including secrets, as JSON
     export extern "opencode auth export" [
-        target?: string  # Integration ID or name (optional)
+        target?: string  # Integration ID or name
         --standalone     # Run with a private server instead of the background service
         --server: string # Connect to a server URL instead of the background service
     ]
@@ -113,15 +113,15 @@ module completions {
 
     # import credentials exported by auth export
     export extern "opencode auth import" [
-        file?: string@"json files" # JSON file to import (reads stdin when omitted) (optional)
+        file?: string@"json files" # JSON file to import (reads stdin when omitted)
         --standalone               # Run with a private server instead of the background service
         --server: string           # Connect to a server URL instead of the background service
     ]
 
     # switch the active account for an integration
     export extern "opencode auth switch" [
-        target?: string     # Integration ID or name (optional)
-        credential?: string # Credential ID or label (opens an account picker when omitted) (optional)
+        target?: string     # Integration ID or name
+        credential?: string # Credential ID or label (opens an account picker when omitted)
         --standalone        # Run with a private server instead of the background service
         --server: string    # Connect to a server URL instead of the background service
     ]
@@ -135,7 +135,7 @@ module completions {
     # Add an MCP server to your configuration
     export extern "opencode mcp add" [
         name: string       # Name of the MCP server
-        ...command: string # Command and arguments for a local server, passed after -- (optional)
+        ...command: string # Command and arguments for a local server, passed after --
         --url: string      # URL for a remote MCP server
         --header: string   # HTTP header for a remote server, as name=value
         --env: string      # Environment variable for a local server, as name=value
@@ -144,7 +144,7 @@ module completions {
 
     # Authenticate with an OAuth-capable remote MCP server
     export extern "opencode mcp auth" [
-        name?: string # Name of the MCP server (optional)
+        name?: string # Name of the MCP server
     ]
 
     # Remove stored OAuth credentials for an MCP server
@@ -167,12 +167,12 @@ module completions {
 
     # Check package plugins for updates
     export extern "opencode plugin check" [
-        target?: string # Configured package target (optional)
+        target?: string # Configured package target
     ]
 
     # Update package plugins
     export extern "opencode plugin update" [
-        target?: string # Configured package target; omit to update all outdated plugins (optional)
+        target?: string # Configured package target; omit to update all outdated plugins
     ]
 
     # Remove a plugin from global configuration
@@ -216,6 +216,7 @@ module completions {
         --prompt: string      # Prompt to use
     ]
 
+    # Manage sessions
     export extern "opencode session" []
 
     # List top-level sessions in the current project, newest first
@@ -235,7 +236,7 @@ module completions {
 
     # Export session data as JSON
     export extern "opencode session export" [
-        session?: string@"sessions in pwd" # Session ID to export `(optional)`
+        session?: string@"sessions in pwd" # Session ID to export
         --standalone                       # Run with a private server instead of the background service
         --server: string                   # Connect to a server URL instead of the background service
         --sanitize                         # Redact sensitive transcript and file data
@@ -266,21 +267,21 @@ module completions {
 
     # Get service configuration
     export extern "opencode service get" [
-        key?: string  # Service setting or env `(optional)`
-        name?: string # Environment variable name `(optional)`
+        key?: string  # Service setting or env
+        name?: string # Environment variable name
     ]
 
     # Set service configuration
     export extern "opencode service set" [
         key: string        # Service setting or env
         value: string      # Setting value or environment variable name
-        env_value?: string # Environment variable value `(optional)`
+        env_value?: string # Environment variable value
     ]
 
     # Unset service configuration
     export extern "opencode service unset" [
         key: string   # Service setting or env
-        name?: string # Environment variable name `(optional)`
+        name?: string # Environment variable name
     ]
 
     # Reload configuration
