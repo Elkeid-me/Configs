@@ -518,6 +518,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -682,7 +684,7 @@ module completions {
   # Add dependencies to the project
   export extern "uv add" [
     --requirements(-r): path  # Add the packages listed in the given files
-    --constraints(-c): path   # Constrain versions using the given requirements files
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
     --marker(-m): string      # Apply this marker to all added packages
     --dev                     # Add the requirements to the development dependency group [env: UV_DEV=]
     --optional: string        # Add the requirements to the package's optional dependencies for the specified extra
@@ -742,6 +744,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -878,6 +882,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1013,6 +1019,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1169,6 +1177,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1291,6 +1301,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1359,6 +1371,8 @@ module completions {
     --no-index                # Ignore the registry index (e.g., PyPI), instead relying on direct URL dependencies and those provided via `--find-links`
     --index-strategy: string@"nu-complete uv upgrade index_strategy" # The strategy to use when resolving against multiple index URLs
     --keyring-provider: string@"nu-complete uv upgrade keyring_provider" # Attempt to use `keyring` for authentication for index URLs
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv upgrade python_preference"
@@ -1511,6 +1525,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1622,6 +1638,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -1844,6 +1862,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -1951,6 +1971,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -2114,9 +2136,9 @@ module completions {
     --with(-w): string        # Run with the given packages installed
     --with-editable: path     # Run with the given packages installed in editable mode
     --with-requirements: path # Run with the packages listed in the given files
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
-    --overrides: path         # Override versions using the given requirements files
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
+    --overrides: path         # Override versions using the given requirements files [env: `UV_OVERRIDE`=]
     --isolated                # Run the tool in an isolated virtual environment, ignoring any already-installed tools [env: UV_ISOLATED=]
     --env-file: path          # Load environment variables from a `.env` file
     --no-env-file             # Avoid reading environment variables from a `.env` file [env: UV_NO_ENV_FILE=]
@@ -2158,6 +2180,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -2253,9 +2277,9 @@ module completions {
     --with(-w): string        # Run with the given packages installed
     --with-editable: path     # Run with the given packages installed in editable mode
     --with-requirements: path # Run with the packages listed in the given files
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
-    --overrides: path         # Override versions using the given requirements files
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
+    --overrides: path         # Override versions using the given requirements files [env: `UV_OVERRIDE`=]
     --isolated                # Run the tool in an isolated virtual environment, ignoring any already-installed tools [env: UV_ISOLATED=]
     --env-file: path          # Load environment variables from a `.env` file
     --no-env-file             # Avoid reading environment variables from a `.env` file [env: UV_NO_ENV_FILE=]
@@ -2297,6 +2321,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -2391,10 +2417,10 @@ module completions {
     --editable(-e)            # Install the target package in editable mode, such that changes in the package's source directory are reflected without reinstallation
     --with-editable: path     # Include the given packages in editable mode
     --with-executables-from: string # Install executables from the following packages
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --overrides: path         # Override versions using the given requirements files
-    --excludes: path          # Exclude packages from resolution using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --overrides: path         # Override versions using the given requirements files [env: `UV_OVERRIDE`=]
+    --excludes: path          # Exclude packages from resolution using the given requirements files [env: `UV_EXCLUDE`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
     --index: string           # The indexes to use when resolving dependencies, in addition to the default index
     --default-index: string   # The default package index (by default: <https://pypi.org/simple>)
     --index-url(-i): string   # (Deprecated: use `--default-index` instead) The URL of the Python package index (by default: <https://pypi.org/simple>)
@@ -2433,6 +2459,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -2557,6 +2585,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --no-cache(-n)            # Avoid reading from or writing to the cache, instead using a temporary directory for the duration of the operation
     --cache-dir: path         # Path to the cache directory
     --python-preference: string@"nu-complete uv tool upgrade python_preference"
@@ -3441,10 +3471,12 @@ module completions {
 
   # Compile a `requirements.in` file to a `requirements.txt` or `pylock.toml` file
   export extern "uv pip compile" [
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --overrides: path         # Override versions using the given requirements files
-    --excludes: path          # Exclude packages from resolution using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --overrides: path         # Override versions using the given requirements files [env: `UV_OVERRIDE`=]
+    --excludes: path          # Exclude packages from resolution using the given requirements files [env: `UV_EXCLUDE`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes
     --extra: string           # Include optional dependencies from the specified extra name; may be provided more than once
     --all-extras              # Include all optional dependencies
     --no-all-extras
@@ -3604,8 +3636,8 @@ module completions {
 
   # Sync an environment with a `requirements.txt` or `pylock.toml` file
   export extern "uv pip sync" [
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
     --extra: string           # Include optional dependencies from the specified extra name; may be provided more than once
     --all-extras              # Include all optional dependencies
     --no-all-extras
@@ -3639,6 +3671,8 @@ module completions {
     --no-require-hashes
     --verify-hashes
     --no-verify-hashes        # Disable validation of hashes in the requirements file
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes
     --python(-p): string      # The Python interpreter into which packages should be installed.
     --system                  # Install packages into the system Python environment
     --no-system
@@ -3755,10 +3789,10 @@ module completions {
     --editable(-e): string    # Install the editable package based on the provided local file path
     --no-editable             # Install any editable dependencies as non-editable [env: UV_NO_EDITABLE=]
     --no-editable-package: string # Install the specified editable packages as non-editable
-    --constraints(-c): path   # Constrain versions using the given requirements files
-    --overrides: path         # Override versions using the given requirements files
-    --excludes: path          # Exclude packages from resolution using the given requirements files
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions
+    --constraints(-c): path   # Constrain versions using the given requirements files [env: `UV_CONSTRAINT`=]
+    --overrides: path         # Override versions using the given requirements files [env: `UV_OVERRIDE`=]
+    --excludes: path          # Exclude packages from resolution using the given requirements files [env: `UV_EXCLUDE`=]
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building source distributions [env: `UV_BUILD_CONSTRAINT`=]
     --extra: string           # Include optional dependencies from the specified extra name; may be provided more than once
     --all-extras              # Include all optional dependencies
     --no-all-extras
@@ -3804,6 +3838,8 @@ module completions {
     --no-require-hashes
     --verify-hashes
     --no-verify-hashes        # Disable validation of hashes in the requirements file
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes
     --python(-p): string      # The Python interpreter into which packages should be installed.
     --system                  # Install packages into the system Python environment
     --no-system
@@ -4459,7 +4495,7 @@ module completions {
     --clear                   # Clear the output directory before the build, removing stale artifacts
     --create-gitignore
     --no-create-gitignore     # Do not create a `.gitignore` file in the output directory
-    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building distributions
+    --build-constraints(-b): path # Constrain build dependencies using the given requirements files when building distributions [env: `UV_BUILD_CONSTRAINT`=]
     --require-hashes          # Require a matching hash for each requirement
     --no-require-hashes
     --verify-hashes
@@ -4498,6 +4534,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
@@ -4725,6 +4763,8 @@ module completions {
     --no-binary               # Don't install pre-built wheels
     --binary
     --no-binary-package: string # Don't install pre-built wheels for a specific package [env: `UV_NO_BINARY_PACKAGE`=]
+    --require-build-hashes    # Require hashes for all build dependencies
+    --no-require-build-hashes # Do not require hashes for every build dependency
     --refresh                 # Refresh all cached data
     --no-refresh
     --refresh-package: string # Refresh cached data for a specific package
