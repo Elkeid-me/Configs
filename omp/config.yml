@@ -1,7 +1,36 @@
-symbolPreset: nerd
 setupVersion: 2
+
+modelRoles:
+  web: web/exa
+  default: xiaomi/mimo-v2.6-flash:high
+  smol: xiaomi/mimo-v2.6-flash:off
+  vision: xiaomi/mimo-v2.6-flash:medium
+retry:
+  fallbackChains:
+    web:
+      - web/perplexity
+      - web/parallel
+      - web/hosted
+      - web/firecrawl
+      - web/searxng
+      - web/startpage
+      - web/duckduckgo
+      - web/ecosia
+      - web/google
+      - web/mojeek
+      - web/public
+
+symbolPreset: nerd
 statusLine:
   preset: ascii
+  sessionAccent: false
+title:
+  icons: boring
+composer:
+  shape: box
+  tokenRate: true
+hideThinkingBlock: true
+
 dev:
   autoqa: false
 browser:
@@ -12,11 +41,15 @@ tools:
   approvalMode: write
 lsp:
   enabled: false
-providers:
-  webSearchOrder:
-    - exa
-    - perplexity
-hideThinkingBlock: true
+astEdit:
+  enabled: false
+eval:
+  autoProvision: false
+  tools:
+    enabled: false
+  py: false
+  js: false
+
 recap:
   enabled: false
 magicKeywords:
@@ -33,11 +66,5 @@ compaction:
   dropUseless: false
 inlineToolDescriptors: "off"
 includeModelInPrompt: false
-eval:
-  autoProvision: false
-  tools:
-    enabled: false
-  py: false
-  js: false
-composer:
-  shape: box
+
+defaultThinkingLevel: auto
