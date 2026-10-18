@@ -28,5 +28,22 @@
       "resource": "git push *",
       "effect": "deny"
     }
-  ]
+  ],
+  "providers": {
+    "opencode": {
+      "models": {
+        "mimo-v2.6-flash-free": {
+          "capabilities": {
+            "input": [
+              "audio",
+              "video",
+              "text",
+              "image",
+              "pdf"
+            ]
+          }
+        }
+      }
+    }
+  }
 }
