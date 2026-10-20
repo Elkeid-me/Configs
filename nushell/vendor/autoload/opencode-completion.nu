@@ -11,7 +11,6 @@ module completions {
         --continue(-c)                          # Continue the last session
         --session(-s): string@"sessions in pwd" # Session ID to continue, or to create if it does not exist
         --prompt: string                        # Prompt to use
-        --help(-h)                              # Show help information
         --version(-v)                           # Show version information
         --wizard                                # Start wizard mode for a command
         --completions: string@[

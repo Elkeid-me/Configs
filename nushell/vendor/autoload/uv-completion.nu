@@ -44,7 +44,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     --version(-V)             # Display the uv version
   ]
 
@@ -92,7 +91,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv auth login keyring_provider" [] {
@@ -147,7 +145,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     service: string           # The domain or URL of the service to log into
   ]
 
@@ -201,7 +198,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     service: string           # The domain or URL of the service to logout from
   ]
 
@@ -255,7 +251,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     service: string           # The domain or URL of the service to lookup
   ]
 
@@ -303,7 +298,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv auth helper protocol" [] {
@@ -355,7 +349,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv auth helper get python_preference" [] {
@@ -402,7 +395,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv run index_strategy" [] {
@@ -559,7 +551,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv init vcs" [] {
@@ -637,7 +628,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     path?: path               # The path to use for the project/script
   ]
 
@@ -792,7 +782,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...packages: string       # The packages to add, as PEP 508 requirements (e.g., `ruff==0.5.0`)
   ]
 
@@ -920,7 +909,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...packages: string       # The names of the dependencies to remove (e.g., `ruff`)
   ]
 
@@ -1056,7 +1044,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     value?: string            # Set the project version to this value
   ]
 
@@ -1219,7 +1206,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv lock index_strategy" [] {
@@ -1337,7 +1323,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv upgrade index_strategy" [] {
@@ -1403,7 +1388,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...packages: string       # The packages to upgrade
   ]
 
@@ -1562,7 +1546,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tree format" [] {
@@ -1701,7 +1684,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv format python_preference" [] {
@@ -1754,7 +1736,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...extra_args: string     # Additional arguments to pass to Ruff
   ]
 
@@ -1896,7 +1877,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv audit output_format" [] {
@@ -2032,7 +2012,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool python_preference" [] {
@@ -2079,7 +2058,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool run index_strategy" [] {
@@ -2220,7 +2198,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool uvx index_strategy" [] {
@@ -2362,7 +2339,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool install index_strategy" [] {
@@ -2499,7 +2475,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     package: string           # The package to install commands from
   ]
 
@@ -2617,7 +2592,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...name: string           # The name of the tool to upgrade, along with an optional version specifier
   ]
 
@@ -2674,7 +2648,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool audit output_format" [] {
@@ -2735,7 +2708,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...name: string           # The names of the installed tools to audit
   ]
 
@@ -2784,7 +2756,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...name: string           # The name of the tool to uninstall
   ]
 
@@ -2832,7 +2803,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv tool dir python_preference" [] {
@@ -2880,7 +2850,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv python python_preference" [] {
@@ -2927,7 +2896,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv python list output_format" [] {
@@ -2986,7 +2954,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     request?: string          # A Python request to filter by
   ]
 
@@ -3050,7 +3017,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...targets: string        # The Python version(s) to install
   ]
 
@@ -3107,7 +3073,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...targets: string        # The Python minor version(s) to upgrade
   ]
 
@@ -3162,7 +3127,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     request?: string          # The Python request
   ]
 
@@ -3216,7 +3180,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     request?: string          # The Python version request
   ]
 
@@ -3265,7 +3228,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv python uninstall python_preference" [] {
@@ -3314,7 +3276,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...targets: string        # The Python version(s) to uninstall
   ]
 
@@ -3362,7 +3323,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip python_preference" [] {
@@ -3410,7 +3370,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip compile index_strategy" [] {
@@ -3594,7 +3553,6 @@ module completions {
     --directory: path         # Change to the given directory prior to running the command
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
-    --help(-h)                # Display the concise help for this command
     ...src_file: path         # Include the packages listed in the given files
   ]
 
@@ -3731,7 +3689,6 @@ module completions {
     --directory: path         # Change to the given directory prior to running the command
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
-    --help(-h)                # Display the concise help for this command
     ...src_file: path         # Include the packages listed in the given files
   ]
 
@@ -3894,7 +3851,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...package: string        # Install all listed packages
   ]
 
@@ -3959,7 +3915,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...package: string        # Uninstall all listed packages
   ]
 
@@ -4019,7 +3974,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip list format" [] {
@@ -4103,7 +4057,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip show python_preference" [] {
@@ -4160,7 +4113,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...package: string        # The package(s) to display
   ]
 
@@ -4241,7 +4193,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip check python_platform" [] {
@@ -4298,7 +4249,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv pip debug python_preference" [] {
@@ -4350,7 +4300,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv venv index_strategy" [] {
@@ -4440,7 +4389,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     path?: path               # The path to the virtual environment to create
   ]
 
@@ -4569,7 +4517,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     src?: path                # The directory from which distributions should be built, or a source distribution archive to build into a wheel
   ]
 
@@ -4636,7 +4583,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...files: path            # Paths to the files to upload. Accepts glob expressions
   ]
 
@@ -4684,7 +4630,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv workspace metadata index_strategy" [] {
@@ -4802,7 +4747,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv workspace dir python_preference" [] {
@@ -4850,7 +4794,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv workspace list python_preference" [] {
@@ -4899,7 +4842,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv build-backend python_preference" [] {
@@ -4946,7 +4888,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv build-backend build-sdist python_preference" [] {
@@ -4993,7 +4934,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     sdist_directory: path
   ]
 
@@ -5042,7 +4982,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     wheel_directory: path
   ]
 
@@ -5091,7 +5030,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     wheel_directory: path
   ]
 
@@ -5139,7 +5077,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv build-backend get-requires-for-build-wheel python_preference" [] {
@@ -5186,7 +5123,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv build-backend prepare-metadata-for-build-wheel python_preference" [] {
@@ -5233,7 +5169,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     wheel_directory: path
   ]
 
@@ -5281,7 +5216,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv build-backend prepare-metadata-for-build-editable python_preference" [] {
@@ -5328,7 +5262,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     wheel_directory: path
   ]
 
@@ -5376,7 +5309,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv cache clean python_preference" [] {
@@ -5424,7 +5356,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...package: string        # The packages to remove from the cache
   ]
 
@@ -5474,7 +5405,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv cache dir python_preference" [] {
@@ -5521,7 +5451,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv cache size output_format" [] {
@@ -5574,7 +5503,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv self python_preference" [] {
@@ -5621,7 +5549,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv self update python_preference" [] {
@@ -5670,7 +5597,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     target_version?: string   # Update to the specified version. If not provided, uv will update to the latest version
   ]
 
@@ -5724,7 +5650,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
   ]
 
   def "nu-complete uv clean python_preference" [] {
@@ -5772,7 +5697,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...package: string        # The packages to remove from the cache
   ]
 
@@ -5806,7 +5730,6 @@ module completions {
     --no-progress
     --config-file: path
     --no-config
-    --help(-h)
     --version(-V)
     --managed-python          # Require use of uv-managed Python versions [env: UV_MANAGED_PYTHON=]
     --no-managed-python       # Disable use of uv-managed Python versions [env: UV_NO_MANAGED_PYTHON=]
@@ -5874,7 +5797,6 @@ module completions {
     --project: path           # Discover a project in the given directory
     --config-file: path       # The path to a `uv.toml` file to use for configuration
     --no-config               # Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)
-    --help(-h)                # Display the concise help for this command
     ...command: string
   ]
 
