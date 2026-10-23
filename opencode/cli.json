@@ -1,7 +1,8 @@
 {
   "$schema": "https://opencode.ai/v2/cli.json",
   "session": {
-    "tps": true
+    "tps": true,
+    "sidebar": "hide"
   },
   "animations": true,
   "attention": {
