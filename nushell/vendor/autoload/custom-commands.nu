@@ -36,7 +36,10 @@ def update-completions [--force] {
 
 # Elixir 生产环境编译
 def mix-build-release [] {
-    with-env { MIX_ENV: prod } {
+    with-env {
+        MIX_ENV: prod,
+        MIX_OS_DEPS_COMPILE_PARTITION_COUNT: ((sys cpu | length) / 2)
+    } {
         ^mix release
     }
 }

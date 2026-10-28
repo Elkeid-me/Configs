@@ -590,7 +590,7 @@ module completions {
     --description: string     # Set the project description
     --no-description          # Disable the description for the project
     --vcs: string@"nu-complete uv init vcs" # Initialize a version control system for the project
-    --build-backend: string@"nu-complete uv init build_backend" # Initialize a build-backend of choice for the project
+    --build-backend: string@"nu-complete uv init build_backend" # Initialize a build-backend of choice for the project [env: UV_INIT_BUILD_BACKEND=]
     --backend                 # Invalid option name for build backend
     --no-readme               # Do not create a `README.md` file
     --author-from: string@"nu-complete uv init author_from" # Fill in the `authors` field in the `pyproject.toml`
