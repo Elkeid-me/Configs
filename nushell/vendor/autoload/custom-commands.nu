@@ -36,9 +36,10 @@ def update-completions [--force] {
 
 # Elixir 生产环境编译
 def mix-build-release [] {
+    let parallel_deps = [1 ((sys cpu | length) // 2)] | math max
     with-env {
         MIX_ENV: prod,
-        MIX_OS_DEPS_COMPILE_PARTITION_COUNT: ((sys cpu | length) / 2)
+        MIX_OS_DEPS_COMPILE_PARTITION_COUNT: $parallel_deps
     } {
         ^mix release
     }
