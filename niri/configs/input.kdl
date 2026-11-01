@@ -13,5 +13,5 @@ input {
     mouse {
         accel-profile "adaptive"
     }
-    focus-follows-mouse
+    // focus-follows-mouse
 }

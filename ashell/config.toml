@@ -19,4 +19,5 @@ right = ["Notifications", "Tray", "Tempo", "Settings"]
 clock_format = "%Y/%m/%d  %R"
 
 [settings]
+lock_cmd = "swaylock"
 logout_cmd = "niri msg action quit --skip-confirmation"
