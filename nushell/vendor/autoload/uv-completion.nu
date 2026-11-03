@@ -4670,6 +4670,7 @@ module completions {
 
   # View metadata about the current workspace
   export extern "uv workspace metadata" [
+    --output-version: string  # Request a specific version of the metadata schema
     --script: path            # View metadata for the specified PEP 723 Python script, rather than the current workspace
     --locked                  # Check if the lockfile is up-to-date [env: UV_LOCKED=]
     --no-locked               # Disable locked mode, overriding `UV_LOCKED`
