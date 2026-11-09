@@ -1,10 +1,9 @@
-setupVersion: 2
-
+setupVersion: 3
 modelRoles:
   web: web/exa
-  default: xiaomi/mimo-v2.6-flash:high
-  smol: xiaomi/mimo-v2.6-flash:off
-  vision: xiaomi/mimo-v2.6-flash:medium
+  smol: deepseek/deepseek-flash:off
+  vision: deepseek/deepseek-flash:high
+  default: deepseek/deepseek-flash:high
 retry:
   fallbackChains:
     web:
@@ -19,7 +18,6 @@ retry:
       - web/google
       - web/mojeek
       - web/public
-
 symbolPreset: nerd
 statusLine:
   preset: ascii
@@ -30,7 +28,6 @@ composer:
   shape: box
   tokenRate: true
 hideThinkingBlock: true
-
 dev:
   autoqa: false
 browser:
@@ -49,7 +46,6 @@ eval:
     enabled: false
   py: false
   js: false
-
 recap:
   enabled: false
 magicKeywords:
@@ -66,5 +62,4 @@ compaction:
   dropUseless: false
 inlineToolDescriptors: "off"
 includeModelInPrompt: false
-
 defaultThinkingLevel: auto
