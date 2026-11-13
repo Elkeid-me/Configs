@@ -1,6 +1,7 @@
 if (which ^rustup | is-not-empty) {
     load-env {
-        RUSTUP_DIST_SERVER: "https://mirrors.tuna.tsinghua.edu.cn/rustup"
+        RUSTUP_DIST_SERVER: "https://mirrors.cernet.edu.cn/rustup",
+        RUSTUP_UPDATE_ROOT: "https://mirrors.cernet.edu.cn/rustup/rustup"
     }
 }
 
