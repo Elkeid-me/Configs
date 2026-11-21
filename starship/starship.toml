@@ -38,10 +38,10 @@ tag_disabled = false
 
 [git_state]
 style = "#F4B8E4"
-rebase = "\ue728 "
-merge = "\ue727 "
-revert = "\ue728 "
-cherry_pick = "\ue29b "
+rebase = "\ue728"
+merge = "\ue727"
+revert = "\ue728"
+cherry_pick = "\ue29b"
 
 [hostname]
 format = "[$ssh_symbol$hostname]($style) "
