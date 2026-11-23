@@ -5,27 +5,23 @@ def rm-history [] {
 
 # 更新补全脚本
 def update-completions [--force] {
-    let programs = do {
+    let programs: list<string> = do {
         cd ($nu.data-dir | path join "vendor" "autoload")
-        ls | get name | parse "{program}-completion.nu" | get program
+        ls | get name | parse "{program}-completions.nu" | get program
     }
     $programs |
         par-each {|program|
-            let completion_script_path = $nu.data-dir |
-                path join "vendor" "autoload" $"($program)-completion.nu"
-            let completion_script_url = $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/nushell/vendor/autoload/($program)-completion.nu"
-            let no_proxy = if $env has no_proxy {
+            let completion_script_path: string = $nu.data-dir |
+                path join "vendor" "autoload" $"($program)-completions.nu"
+            let completion_script_url: string = $"https://cdn.jsdelivr.net/gh/Elkeid-me/Configs@main/nushell/vendor/autoload/($program)-completions.nu"
+            let no_proxy: string = if $env has no_proxy {
                 $"($env.no_proxy),cdn.jsdelivr.net"
             } else {
                 "cdn.jsdelivr.net"
             }
-            let path_exists = $completion_script_path | path exists
-            let up_to_date = if $path_exists {
-                (date now) - (ls $completion_script_path | get 0.modified) < 1day
-            } else {
-                false
-            }
-            if ($force or not $path_exists or not $up_to_date) {
+            let path_exists: bool = $completion_script_path | path exists
+            let up_to_date: bool = $path_exists and (ls $completion_script_path | get modified) newer-than 1day
+            if ($force or not $up_to_date) {
                 print $"Updating completions script for ($program)..."
                 with-env { no_proxy: $no_proxy } {
                     http get $completion_script_url | save --force $completion_script_path
@@ -36,7 +32,7 @@ def update-completions [--force] {
 
 # Elixir 生产环境编译
 def mix-build-release [] {
-    let parallel_deps = [1 ((sys cpu | length) // 2)] | math max
+    let parallel_deps: int = [1 ((sys cpu | length) // 2)] | math max
     with-env {
         MIX_ENV: prod,
         MIX_OS_DEPS_COMPILE_PARTITION_COUNT: $parallel_deps
@@ -50,7 +46,7 @@ def tlmgr-install [filename: string] {
     let query = ^tlmgr search --json --global --file $filename | lines |
         where {|item| $item !~ 'tlmgr\.pl: package repository .*' } |
         get 0 | from json | get files
-    let package_name = $query | items {|package, files| [$package $files] } |
+    let package_name: string = $query | items {|package, files| [$package $files] } |
         where {|item|
             $item.1 | any {|item|
                 let p = $item | path parse
@@ -69,7 +65,7 @@ def compile-latex [path: string] {
         if ($output_ | is-empty) {
             break
         }
-        let file_name = $output_ |
+        let file_name: string = $output_ |
             parse "! LaTeX Error: File `{file_name}' not found." | get 0.file_name
         tlmgr-install $file_name
     }
