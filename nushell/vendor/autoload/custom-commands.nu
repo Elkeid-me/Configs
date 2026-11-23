@@ -20,7 +20,8 @@ def update-completions [--force] {
                 "cdn.jsdelivr.net"
             }
             let path_exists: bool = $completion_script_path | path exists
-            let up_to_date: bool = $path_exists and (ls $completion_script_path | get modified) newer-than 1day
+            let up_to_date: bool = ($path_exists
+                and (ls $completion_script_path | get 0.modified) newer-than 1day)
             if ($force or not $up_to_date) {
                 print $"Updating completions script for ($program)..."
                 with-env { no_proxy: $no_proxy } {
