@@ -42,7 +42,7 @@ def mix-build-release [] {
     }
 }
 
-#  自动安装 TeX Live 缺失宏包
+# 自动安装 TeX Live 缺失宏包
 def tlmgr-install [filename: string] {
     let query = ^tlmgr search --json --global --file $filename | lines |
         where {|item| $item !~ 'tlmgr\.pl: package repository .*' } |

@@ -39,7 +39,7 @@ tools:
 lsp:
   enabled: false
 astEdit:
-  enabled: false
+  enabled: true
 eval:
   autoProvision: false
   tools:
@@ -63,3 +63,9 @@ compaction:
 inlineToolDescriptors: "off"
 includeModelInPrompt: false
 defaultThinkingLevel: auto
+todo:
+  enabled: false
+commit:
+  enabled: false
+astGrep:
+  enabled: true
